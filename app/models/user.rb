@@ -14,7 +14,7 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.image_url = auth.info.image
       user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at) if auth.credentials.expires
       user.save!
     end
   end
