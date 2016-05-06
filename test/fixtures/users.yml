@@ -5,11 +5,8 @@ one:
   provider: MyString
   uid: MyString
   oauth_token: MyString
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   email: MyString
-  birthdate: 2016-05-04
-  sex: 1
   role: 1
   shirt_size: 1
 
@@ -18,10 +15,7 @@ two:
   provider: MyString
   uid: MyString
   oauth_token: MyString
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   email: MyString
-  birthdate: 2016-05-04
-  sex: 1
   role: 1
   shirt_size: 1
