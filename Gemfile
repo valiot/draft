@@ -4,6 +4,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-identity'
 gem 'omniauth-google-oauth2'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
@@ -41,6 +42,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'better_errors'
   gem 'binding_of_caller'
