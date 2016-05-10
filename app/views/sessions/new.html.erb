@@ -1,4 +1,32 @@
-<p>
-  <strong>Don't use these services?</strong>
-  <%= link_to "Create an account", new_identity_path %> or <%= link_to "Login", login_path %>.
-</p>
+<div class="container front-page" style="text-align:center;">
+  <h1 class="display-4">¡Bienvenido al draft!</h1>
+  <div class="form-container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <img src="https://scontent-dfw1-1.xx.fbcdn.net/v/t1.0-9/11037246_986269664772336_5268876962938225518_n.png?oh=acf00f6ce975f205a85f9906ce551c24&oe=57A9BE66" alt="logo" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <%= button_to 'Ingresa con Facebook', '/auth/facebook/', class:"btn btn-primary btn-block login-btn" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+          <%= button_to 'Ingresa con Google', '/auth/google/', class:"btn btn-danger btn-block login-btn"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+          <%= button_to 'Ingresa con Github', '/auth/github/', class:"btn btn-warning btn-block login-btn" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-container">
+    <div class="row">
+      <div class="col-sm-12" style="height: 25px">
+        <p>¿No tienes cuenta? <%= link_to "Registrate", new_identity_path %> o <%= link_to "haz login", login_path %>.</p>
+      </div>
+    </div>
+  </div>
+</div>
