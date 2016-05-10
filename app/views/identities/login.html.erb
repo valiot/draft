@@ -2,7 +2,7 @@
   <%= form_tag "/auth/identity/callback" do %>
     <div class="form-container">
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-1">
+        <div class="col-xs-6 col-xs-offset-1">
           <div class="field">
             <%= label_tag :auth_key, "Email" %><br>
             <%= email_field_tag :auth_key %>
@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-1">
+        <div class="col-xs-6 col-xs-offset-1">
           <div class="field">
             <%= label_tag :password %><br>
             <%= password_field_tag :password %>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-xs-6 col-xs-offset-3">
           <div class="actions"><%= submit_tag "Login", class:"btn btn-success btn-block" %></div>
         </div>
       </div>
