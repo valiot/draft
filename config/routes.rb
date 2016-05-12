@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :checkins
+resources :events
+resources :invitations
+resources :profiles
+resources :users
+resources :identities
+
+    root to: "checkins#index"
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'auth/:provider/callback', to: 'sessions#create'
   post 'auth/:provider/callback', to: 'sessions#create'
