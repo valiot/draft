@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :attendees
     resources :events
+    resources :identities
     resources :invitations
     resources :profiles
+    resources :teams
     resources :users
-    resources :identities
 
     root to: "attendees#index"
   end
