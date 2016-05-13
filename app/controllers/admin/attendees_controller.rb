@@ -1,5 +1,5 @@
 module Admin
-  class CheckinsController < Admin::ApplicationController
+  class AttendeesController < Admin::ApplicationController
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #

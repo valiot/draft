@@ -8,9 +8,10 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    id: Field::Number,
     profile: Field::BelongsTo,
     invitations: Field::HasMany,
-    checkins: Field::HasMany,
+    attendees: Field::HasMany,
     name: Field::String,
     email: Field::String,
     image_url: Field::String,
@@ -28,7 +29,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :profile,
     :invitations,
-    :checkins,
+    :attendees,
     :id,
   ].freeze
 
@@ -37,7 +38,7 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :profile,
     :invitations,
-    :checkins,
+    :attendees,
     :name,
     :email,
     :image_url,
@@ -53,7 +54,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :profile,
     :invitations,
-    :checkins,
+    :attendees,
     :name,
     :email,
     :image_url,

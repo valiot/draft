@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class CheckinDashboard < Administrate::BaseDashboard
+class AttendeeDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,6 +10,7 @@ class CheckinDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
     event: Field::BelongsTo,
+    team: Field::BelongsTo,
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -23,6 +24,7 @@ class CheckinDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :event,
+    :team,
     :id,
     :created_at,
   ].freeze
@@ -32,6 +34,7 @@ class CheckinDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :user,
     :event,
+    :team,
     :id,
     :created_at,
     :updated_at,
@@ -43,6 +46,7 @@ class CheckinDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     :event,
+    :team
   ].freeze
 
   # Overwrite this method to customize how checkins are displayed

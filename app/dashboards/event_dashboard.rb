@@ -9,7 +9,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invitations: Field::HasMany,
-    checkins: Field::HasMany,
+    attendees: Field::HasMany,
     teams: Field::HasMany,
     id: Field::Number,
     name: Field::String,
@@ -27,7 +27,7 @@ class EventDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :invitations,
-    :checkins,
+    :attendees,
     :teams,
     :id,
   ].freeze
@@ -36,7 +36,7 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :invitations,
-    :checkins,
+    :attendees,
     :teams,
     :id,
     :name,
@@ -52,7 +52,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :invitations,
-    :checkins,
+    :attendees,
     :teams,
     :name,
     :starts_at,
