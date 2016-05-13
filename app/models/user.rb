@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   belongs_to :profile
   has_many :invitations
-  has_many :checkins
+  has_many :attendees
 
   enum shirt_size: [:xs, :s, :m, :l, :xl, :xxl]
+  enum roles: [:user, :admin]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
