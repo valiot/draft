@@ -5,18 +5,7 @@
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
     <a class="navbar-brand" href="/">Disruptive Angels</a>
     <ul class="nav navbar-nav">
-      <% if current_user %>
-        <li class="nav-item">
-          <a class="nav-link" href="/user/edit"><%= current_user&.name %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href='/logout'>Logout</a>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <a class="nav-link" href='/login'>Login</a>
-        </li>
-      <% end %>
+      <%= login_header %>
     </ul>
   </div>
 </nav>
