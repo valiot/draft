@@ -1,16 +1,6 @@
 <div class="card card-block card-form">
 <%= form_tag "/auth/identity/register" do %>
   <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
-  <% if @identity && @identity.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
-      <ul>
-      <% @identity.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
     <div class="form-group row">
       <%= label_tag :name, 'Nombre', class: 'col-xs-2 form-control-label' %>
       <div class="col-xs-9 col-xs-offset-1">
