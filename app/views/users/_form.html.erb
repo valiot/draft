@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-1">
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-1">
+      <p>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-1">
+      <p>
+        <%= f.label :shirt_size %>
+        <%= f.select(:shirt_size, User.shirt_sizes.keys.map {|shirt| [shirt.titleize,shirt]}) %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <%= f.submit 'Actualizar usuario', class:"btn btn-success btn-block" %>
+    </div>
+  </div>
+</div>
+<% end %>
