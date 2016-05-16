@@ -6,9 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    if current_user
-      redirect_to edit_user_path
-    end
+    redirect_to edit_user_path if current_user
   end
 
   def destroy
