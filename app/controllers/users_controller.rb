@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
-  def new
-  end
-
   def edit
     @user = current_user
-  end
-
-  def show
   end
 
   def update

@@ -1,53 +1,43 @@
-<div class="container">
-  <%= form_tag "/auth/identity/register" do %>
-    <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
-    <% if @identity && @identity.errors.any? %>
-      <div class="error_messages">
-        <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
-        <ul>
-        <% @identity.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+<div class="card card-block card-form">
+<%= form_tag "/auth/identity/register" do %>
+  <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+  <% if @identity && @identity.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+      <% @identity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group row">
+      <%= label_tag :name, 'Nombre', class: 'col-xs-2 form-control-label' %>
+      <div class="col-xs-9 col-xs-offset-1">
+        <%= text_field_tag :name, nil, class:'form-control' %>
       </div>
-    <% end %>
-    <div class="form-container">
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-1">
-          <div class="field">
-            <%= label_tag :name %><br>
-            <%= text_field_tag :name, @identity&.name %>
-          </div>
-        </div>
+    </div>
+    <div class="form-group row">
+      <%= label_tag :email, 'Email', class: 'col-xs-2 form-control-label'  %>
+      <div class="col-xs-9 col-xs-offset-1">
+        <%= email_field_tag :email, nil, class:'form-control' %>
       </div>
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-1">
-          <div class="field">
-            <%= label_tag :email %><br>
-            <%= email_field_tag :email, @identity&.email %>
-          </div>
-        </div>
+    </div>
+    <div class="form-group row">
+      <%= label_tag :password, 'Contraseña', class: 'col-xs-2 form-control-label'  %>
+      <div class="col-xs-9 col-xs-offset-1">
+        <%= password_field_tag :password, nil, class:'form-control' %>
       </div>
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-1">
-          <div class="field">
-            <%= label_tag :password %><br>
-            <%= password_field_tag :password %>
-          </div>
-        </div>
+    </div>
+    <div class="form-group row">
+      <%= label_tag :password_confirmation, 'Confirmar contraseña', class: 'col-xs-2 form-control-label'  %>
+      <div class="col-xs-9 col-xs-offset-1">
+        <%= password_field_tag :password_confirmation, nil, class:'form-control' %>
       </div>
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-1">
-          <div class="field">
-            <%= label_tag :password_confirmation %><br>
-            <%= password_field_tag :password_confirmation %>
-          </div>
-        </div>
-      </div>
-      <div class="row btn-space">
-        <div class="col-xs-6 col-xs-offset-3">
-          <%= submit_tag "Register", class:"btn btn-success btn-block" %>
-        </div>
+    </div>
+    <div class="form-group row btn-space">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= submit_tag "Registrar", class:"btn btn-success btn-block" %>
       </div>
     </div>
   <% end %>

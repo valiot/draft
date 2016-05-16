@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :invitations
   has_many :attendees
 
-  enum shirt_size: [:xs, :s, :m, :l, :xl, :xxl]
+  enum shirt_size: [:s, :m, :l, :xl]
   enum role: [:user, :admin]
 
   def self.from_omniauth(auth)
