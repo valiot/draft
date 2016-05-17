@@ -51,6 +51,6 @@ class InvitationDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(invitation)
-    invitation.name
+    invitation.id
   end
 end

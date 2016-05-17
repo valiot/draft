@@ -10,6 +10,7 @@ class TeamDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     name: Field::String,
     event: Field::BelongsTo,
+    users: Field::HasMany,
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -32,6 +33,7 @@ class TeamDashboard < Administrate::BaseDashboard
     :name,
     :event,
     :id,
+    :users,
     :created_at,
     :updated_at
   ].freeze
@@ -41,7 +43,8 @@ class TeamDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :event
+    :event,
+    :users
   ].freeze
 
   # Overwrite this method to customize how invitations are displayed
