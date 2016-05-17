@@ -45,6 +45,7 @@ end
 
 group :development do
   gem 'rubocop'
+  gem 'scss_lint', require: false
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'better_errors'
   gem 'binding_of_caller'
