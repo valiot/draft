@@ -13,11 +13,11 @@ class EventDashboard < Administrate::BaseDashboard
     teams: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    starts_at: Field::String,
-    finishes_at: Field::String,
+    starts_at: Field::DateTime,
+    finishes_at: Field::DateTime,
     image_id: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,16 +26,15 @@ class EventDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :invitations,
+    :name,
     :attendees,
     :teams,
-    :id,
+    :id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :invitations,
     :attendees,
     :teams,
     :id,
@@ -44,26 +43,23 @@ class EventDashboard < Administrate::BaseDashboard
     :finishes_at,
     :image_id,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :invitations,
-    :attendees,
-    :teams,
     :name,
     :starts_at,
     :finishes_at,
-    :image_id,
+    :image_id
   ].freeze
 
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event)
-  #   "Event ##{event.id}"
-  # end
+  def display_resource(event)
+    event.name
+  end
 end

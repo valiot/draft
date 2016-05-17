@@ -13,7 +13,7 @@ class InvitationDashboard < Administrate::BaseDashboard
     id: Field::Number,
     token: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +25,7 @@ class InvitationDashboard < Administrate::BaseDashboard
     :user,
     :event,
     :id,
-    :token,
+    :token
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +36,7 @@ class InvitationDashboard < Administrate::BaseDashboard
     :id,
     :token,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -44,14 +44,13 @@ class InvitationDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :event,
-    :token,
+    :event
   ].freeze
 
   # Overwrite this method to customize how invitations are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(invitation)
-  #   "Invitation ##{invitation.id}"
-  # end
+  def display_resource(invitation)
+    invitation.id
+  end
 end
