@@ -1,5 +1,5 @@
 class Attendee < ApplicationRecord
   belongs_to :user
   belongs_to :event
-  belongs_to :team
+  belongs_to :team, required: false
 end
