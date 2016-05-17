@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   post 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'login' => 'identities#login', as: 'login'
-  get 'signup' => 'identities#new', as: 'signup'
+  get 'login', to: 'identities#login', as: 'login'
+  get 'signup', to: 'identities#new', as: 'signup'
+  get 'user/edit', to: 'users#edit', as: 'edit_user'
+  patch 'user/', to: 'users#update', as: 'user'
   root 'sessions#new'
   resources :identities
 end

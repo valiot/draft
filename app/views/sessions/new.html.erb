@@ -1,32 +1,30 @@
-<div class="container front-page" style="text-align:center;">
-  <h1 class="display-4">¡Bienvenido al draft!</h1>
-  <div class="form-container">
+<h2 class="title">¡Bienvenido al draft!</h2>
+<div class="card card-block card-form">
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
         <%= image_tag 'logo.png', class: 'img-fluid' %>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12">
         <%= button_to 'Ingresa con Facebook', '/auth/facebook/', class:"btn btn-primary btn-block login-btn" %>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-          <%= button_to 'Ingresa con Google', '/auth/google/', class:"btn btn-danger btn-block login-btn"%>
+      <div class="col-xs-12">
+          <%= button_to 'Ingresa con Google', '/auth/google_oauth2/', class:"btn btn-danger btn-block login-btn"%>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-          <%= button_to 'Ingresa con Github', '/auth/github/', class:"btn btn-warning btn-block login-btn" %>
+      <div class="col-xs-12">
+          <%= button_to 'Ingresa con Github', '/auth/github/', class:"btn btn-default btn-block login-btn" %>
       </div>
     </div>
   </div>
-  <div class="form-container">
+  <div class="card card-block card-form">
     <div class="row">
-      <div class="col-xs-12" style="height: 25px">
+      <div class="col-xs-12">
         <p>¿No tienes cuenta? <%= link_to "Registrate", new_identity_path %> o <%= link_to "haz login", login_path %>.</p>
       </div>
     </div>
   </div>
-</div>
