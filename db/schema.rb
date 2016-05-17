@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20160517170604) do
     t.integer  "shirt_size",       default: 1
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "image_id"
+    t.string   "avatar_id"
     t.index ["profile_id"], name: "index_users_on_profile_id", using: :btree
   end
 
