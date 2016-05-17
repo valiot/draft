@@ -13,7 +13,7 @@ class AttendeeDashboard < Administrate::BaseDashboard
     team: Field::BelongsTo,
     id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +26,7 @@ class AttendeeDashboard < Administrate::BaseDashboard
     :event,
     :team,
     :id,
-    :created_at,
+    :created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +37,7 @@ class AttendeeDashboard < Administrate::BaseDashboard
     :team,
     :id,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,7 +52,7 @@ class AttendeeDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how checkins are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(checkin)
-  #   "Checkin ##{checkin.id}"
-  # end
+  def display_resource(attendee)
+    attendee.id
+  end
 end
