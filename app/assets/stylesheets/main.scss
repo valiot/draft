@@ -23,3 +23,31 @@ $shadow2: rgba(0, 0, 0, .33);
   margin-top: 25px;
   text-align: center;
 }
+
+.avatar {
+  padding: 25px 25px 0;
+}
+
+.uploadable-image:hover {
+  cursor: pointer;
+  opacity: .7;
+
+  + .plus {
+    display: block;
+  }
+}
+
+.plus {
+  color: rgba(255,255,255,.85);
+  display: none;
+  font-family: Helvetica;
+  font-size: 96px;
+  font-weight: 900;
+  left: 43%;
+  position: absolute;
+  top: 20%;
+}
+
+.hidden {
+  display: none;
+}

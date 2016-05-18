@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tether
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$('.uploadable-image').click(function(){
+  $('#user_avatar').click();
+});

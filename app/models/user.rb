@@ -6,6 +6,14 @@ class User < ApplicationRecord
   enum shirt_size: [:s, :m, :l, :xl]
   enum role: [:user, :admin]
 
+  attachment :avatar, type: :image
+
+  def picture_url
+    return avatar_url if avatar_id
+    return image_url if image_url
+    'http://placehold.it/500x500?text=Profile+Picture'
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
