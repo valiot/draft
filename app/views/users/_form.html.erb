@@ -1,34 +1,34 @@
-<div class="card card-form">
-  <div class="avatar">
-    <img class="card-img-top img-fluid uploadable-image" src="<%= @user.picture_url %>" alt="Profile Picture">
-    <span class="plus">+</span>
-  </div>
-  <div class="card-block">
-    <%= form_for @user do |f| %>
-      <%= f.attachment_field :avatar, class: 'hidden' %>
-      <div class="form-group row">
-        <%= f.label :name, 'Nombre', class: 'col-xs-2 form-control-label' %>
-        <div class="col-xs-10">
-          <%= f.text_field :name, class:'form-control' %>
-        </div>
+<div class="avatar">
+  <h2 class="card-title">Confirma tus datos</h2>
+  <img class="card-img-top img-fluid uploadable-image" src="<%= @user.picture_url %>" alt="Profile Picture">
+  <span class="plus">+</span>
+</div>
+<div class="card-block">
+
+  <%= form_for @user do |f| %>
+    <%= f.attachment_field :avatar, class: 'hidden' %>
+    <div class="form-group row">
+      <%= f.label :name, 'Nombre', class: 'col-xs-2 form-control-label' %>
+      <div class="col-xs-10">
+        <%= f.text_field :name, class:'form-control' %>
       </div>
-      <div class="form-group row">
-        <%= f.label :email, 'Email', class: 'col-xs-2 form-control-label' %>
-        <div class="col-xs-10">
-          <%= f.email_field :email, class:'form-control'%>
-        </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :email, 'Email', class: 'col-xs-2 form-control-label' %>
+      <div class="col-xs-10">
+        <%= f.email_field :email, class:'form-control'%>
       </div>
-      <div class="form-group row">
-        <%= f.label :shirt_size, 'Playera', class: 'col-xs-2 form-control-label' %>
-        <div class="col-xs-10">
-          <%= f.select(:shirt_size, User.shirt_sizes.keys.map {|shirt| [shirt.upcase, shirt]}, {}, class: 'c-select form-control') %>
-        </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :shirt_size, 'Playera', class: 'col-xs-2 form-control-label' %>
+      <div class="col-xs-10">
+        <%= f.select(:shirt_size, User.shirt_sizes.keys.map {|shirt| [shirt.upcase, shirt]}, {}, class: 'c-select form-control') %>
       </div>
-      <div class="form-group row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <%= f.submit 'Actualizar usuario', class:"btn btn-success btn-block" %>
-        </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= f.submit 'Actualizar usuario', class:"btn btn-success btn-block" %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
