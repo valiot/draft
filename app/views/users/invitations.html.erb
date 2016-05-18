@@ -4,7 +4,7 @@
   <div class="card card-block card-form" id="invitation-<%= i.id %>">
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
-        <%= image_tag 'logo.png', class: 'img-fluid' %>
+        <%= image_tag attachment_url(i.event, :image) %>
       </div>
     </div>
     <div class="row">
