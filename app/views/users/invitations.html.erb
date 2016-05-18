@@ -20,10 +20,10 @@
     </div>
     <div class="row">
       <div class="col-xs-4 col-xs-offset-2">
-        <%= link_to 'Si voy a ir', accept_invitation_path(@invitations),
+        <%= link_to 'Si voy a ir', accept_invitations_path(i),
                       remote: true, method: :post, class: 'btn btn-success btn-xs' %>      </div>
       <div class="col-xs-4">
-        <%= link_to 'No voy a ir', reject_invitation_path(@invitations),
+        <%= link_to 'No voy a ir', reject_invitations_path(i),
                       remote: true, method: :post, class: 'btn btn-danger btn-xs' %>      </div>
     </div>
   </div>
