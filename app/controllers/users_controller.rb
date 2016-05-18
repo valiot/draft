@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def invitations
+    @invitations = current_user.invitations.where(status: 0)
+  end
+
   private
 
   def user_params
