@@ -1,7 +1,7 @@
 <h2>Estas son tus invitaciones sin aceptar</h2>
 
-<% current_user.invitations.each do |i| %>
-  <div class="card card-block card-form">
+<% current_user.invitations.where(status: :pending).each do |i| %>
+  <div class="card card-block card-form" id="invitation-<%= i.id %>">
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
         <%= image_tag 'logo.png', class: 'img-fluid' %>
