@@ -14,6 +14,10 @@ class User < ApplicationRecord
     'http://placehold.it/500x500?text=Profile+Picture'
   end
 
+  def pending_invitations?
+    invitations.where(status: :pending).count > 0
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
