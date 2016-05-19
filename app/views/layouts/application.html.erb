@@ -29,7 +29,9 @@
       </ul>
     </nav>
     <div class="container">
-      <%= bootstrap_flash %>
+      <div id="flash">
+        <%= bootstrap_flash %>
+      </div>
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

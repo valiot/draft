@@ -11,6 +11,7 @@ class InvitationDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     event: Field::BelongsTo,
     id: Field::Number,
+    status: EnumField,
     token: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -24,6 +25,7 @@ class InvitationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :event,
+    :status,
     :id,
     :token
   ].freeze
@@ -33,6 +35,7 @@ class InvitationDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :user,
     :event,
+    :status,
     :id,
     :token,
     :created_at,

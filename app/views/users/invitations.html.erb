@@ -1,0 +1,27 @@
+
+<h2 class="title">Invitaciones pendientes</h2>
+<% current_user.invitations.where(status: :pending).each do |i| %>
+  <div class="card card-form invitation" id="invitation-<%= i.id %>">
+    <div class="card-block">
+      <h4 class="card-title"><%= i.event.name %></h4>
+      <h6 class="card-subtitle text-muted"><%= i.event.starts_at.strftime("%d de %b del %Y @ %H:%M PM") %></h6>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= attachment_image_tag(i.event, :image, class:"card-img-top img-fluid") %>
+      </div>
+    </div>
+    <div class="card-block">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= link_to "<i class='draft-times'></i>".html_safe, reject_invitations_path(i),
+                    remote: true, method: :post, class: 'btn btn-danger btn-xs invitation-btn' %>
+      </div>
+      <div class="col-xs-6">
+        <%= link_to "<i class='draft-check'></i>".html_safe, accept_invitations_path(i),
+                    remote: true, method: :post, class: 'btn btn-success btn-xs invitation-btn' %>
+      </div>
+    </div>
+  </div>
+  </div>
+<% end %>

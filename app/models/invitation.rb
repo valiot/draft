@@ -4,6 +4,8 @@ class Invitation < ApplicationRecord
 
   before_create :generate_token
 
+  enum status: [:pending, :accepted, :rejected]
+
   private
 
   def generate_token

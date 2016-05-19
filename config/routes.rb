@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   get 'signup', to: 'identities#new', as: 'signup'
   get 'user/edit', to: 'users#edit', as: 'edit_user'
   patch 'user/', to: 'users#update', as: 'user'
+  get 'user/invitations', to: 'users#invitations', as: 'invitations'
+  post 'user/invitations/accept/:id' => 'invitations#accept', as: 'accept_invitations'
+  post 'user/invitations/reject/:id' => 'invitations#reject', as: 'reject_invitations'
+
   root 'sessions#new'
+
   resources :identities
 end
