@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
-    if @user.update(user_params)
+    if current_user.update(user_params)
       redirect_to invitations_path, notice: 'Se actualizaron tus datos'
     else
       render :edit, notice: 'No se pudieron actualizar tus datos'
