@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :profile
+  belongs_to :profile, required: false
   has_many :invitations
   has_many :attendees
 
