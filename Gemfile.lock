@@ -1,16 +1,6 @@
 GIT
-  remote: git://github.com/acrogenesis/administrate-field-refile.git
-  revision: 22aa7823ac128b7a12d618550487d19c64479e77
-  branch: master
-  specs:
-    administrate-field-refile (0.0.5)
-      administrate (>= 0.2.0, < 0.3.0)
-      rails (>= 4.2, < 5.1)
-      refile (~> 0.6)
-
-GIT
-  remote: git://github.com/greetpoint/administrate.git
-  revision: 37e72b8e785df83cd4e1e66b681fd3c38c0b16cd
+  remote: git://github.com/DisruptiveAngels/administrate.git
+  revision: cf3fedde612d2b5e51036bd2af48930a43c3e10f
   branch: rails5
   specs:
     administrate (0.2.1)
@@ -24,6 +14,16 @@ GIT
       rails (>= 4.0, < 5.1)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+
+GIT
+  remote: git://github.com/acrogenesis/administrate-field-refile.git
+  revision: 22aa7823ac128b7a12d618550487d19c64479e77
+  branch: master
+  specs:
+    administrate-field-refile (0.0.5)
+      administrate (>= 0.2.0, < 0.3.0)
+      rails (>= 4.2, < 5.1)
+      refile (~> 0.6)
 
 GIT
   remote: git://github.com/refile/refile.git
