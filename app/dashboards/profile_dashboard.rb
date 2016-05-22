@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ProfileDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -11,9 +11,9 @@ class ProfileDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    image_id: Field::String,
+    image: Field::Refile,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,8 +24,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :users,
     :id,
-    :name,
-    :image_id,
+    :name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,9 +33,9 @@ class ProfileDashboard < Administrate::BaseDashboard
     :users,
     :id,
     :name,
-    :image_id,
+    :image,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -45,7 +44,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :users,
     :name,
-    :image_id,
+    :image
   ].freeze
 
   # Overwrite this method to customize how profiles are displayed
