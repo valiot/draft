@@ -1,3 +1,4 @@
+<% content_for :title, 'Invitaciones Pendientes' %>
 <h2 class="title">Invitaciones pendientes</h2>
 
 <% current_user.invitations.where(status: :pending).each do |i| %>
