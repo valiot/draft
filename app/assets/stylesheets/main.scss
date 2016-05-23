@@ -1,5 +1,6 @@
 $shadow1: rgba(255, 255, 255, .4);
 $shadow2: rgba(0, 0, 0, .33);
+$disruptive-blue: #469cb6;
 
 .front-page {
   text-align: center;
@@ -16,9 +17,9 @@ $shadow2: rgba(0, 0, 0, .33);
 }
 
 .title {
+  color: $disruptive-blue;
   margin-top: 25px;
   text-align: center;
-  color: #469CB6;
 }
 
 .avatar {
@@ -35,7 +36,7 @@ $shadow2: rgba(0, 0, 0, .33);
 }
 
 .plus {
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, .85);
   display: none;
   font-family: Helvetica;
   font-size: 96px;
@@ -57,4 +58,18 @@ $shadow2: rgba(0, 0, 0, .33);
   position: relative;
   top: 50%;
   transform: translateY(50%);
+}
+
+.btn-login {
+  margin: 5px;
+}
+
+@media (max-width:767px) {
+  .bd-navbar .nav-item {
+    float: none;
+  }
+
+  .bd-navbar .nav-item + .nav-item {
+    margin-left: 0;
+  }
 }
