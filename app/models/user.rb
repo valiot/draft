@@ -19,6 +19,8 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
+    existing_user = User.find_by(email: auth.info.email)
+    return existing_user if existing_user
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
