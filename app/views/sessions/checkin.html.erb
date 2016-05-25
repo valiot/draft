@@ -1,0 +1,24 @@
+<% content_for :title, 'Check-in' %>
+<h2 class="title">Check-in</h2>
+
+<% current_user.invitations.where(status: :accepted).each do |i| %>
+  <div class="card card-form invitation" id="checkin-<%= i.id %>">
+    <div class="card-block">
+      <h4 class="card-title"><%= i.event.name %></h4>
+      <h6 class="card-subtitle text-muted"><%= i.event.starts_at.strftime("%d de %b del %Y @ %H:%M PM") %></h6>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= attachment_image_tag(i.event, :image, class:"card-img-top img-fluid") %>
+      </div>
+    </div>
+    <div class="card-block">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to "¡Ya estoy aquí!", present_checkin_path(i),
+                    remote: true, method: :post, class: 'btn btn-primary btn-xs invitation-btn' %>
+      </div>
+    </div>
+  </div>
+  </div>
+<% end %>

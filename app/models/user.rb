@@ -22,6 +22,7 @@ class User < ApplicationRecord
     existing_user = User.find_by(email: auth.info.email)
     return existing_user if existing_user
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.attendees.build(event: event)
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'user/invitations', to: 'users#invitations', as: 'invitations'
   post 'user/invitations/accept/:id' => 'invitations#accept', as: 'accept_invitations'
   post 'user/invitations/reject/:id' => 'invitations#reject', as: 'reject_invitations'
+  get 'checkin', to: 'sessions#checkin', as: 'checkin'
+  get 'checkin/present/:id', to: 'attendees#present', as: 'present_checkin'
 
   root 'sessions#new'
 
