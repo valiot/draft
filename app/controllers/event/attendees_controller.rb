@@ -1,4 +1,4 @@
-class Event::AttendeesController < Event::ApplicationController
+class Event::AttendeesController < ApplicationController
   def new
   end
 

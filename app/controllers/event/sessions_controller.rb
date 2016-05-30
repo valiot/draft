@@ -1,4 +1,4 @@
-class Event::SessionsController < Event::ApplicationController
+class Event::SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id

@@ -1,4 +1,4 @@
-class Event::IdentitiesController < Event::ApplicationController
+class Event::IdentitiesController < ApplicationController
   def new
     @identity = env['omniauth.identity']
     flash.now[:alert] = @identity&.errors
