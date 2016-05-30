@@ -1,6 +1,6 @@
 module ApplicationHelper
   def logout_header
-    return "<a class='btn btn-danger-outline nav-item' href='/logout'>Logout</a>".html_safe if current_user
+    return link_to 'Log out', logout_path, class: 'btn btn-danger-outline nav-item' if current_user
   end
 
   def pending_invitations_header

@@ -1,21 +1,17 @@
 class SessionsController < ApplicationController
   def create
+    event = Event.find_by(slug: (env['omniauth.params'] || session['omniauth.params'])['event'])
     user = User.from_omniauth(env['omniauth.auth'])
-    # user = User.from_omniauth(env['omniauth.auth'], event)
     session[:user_id] = user.id
-    # redirect_to edit_user_path
-    redirect_to checkin_path
-  end
-
-  def checkin
-    # user = User.from_omniauth(env['omniauth.auth'])
-    # session[:user_id] = user.id
-    @invitations = current_user.invitations.where(status: 1)
+    if event
+      redirect_to event_checkin_path(event)
+    else
+      redirect_to edit_user_path
+    end
   end
 
   def new
-    redirect_to checkin_path if current_user
-    # redirect_to edit_user_path if current_user
+    redirect_to edit_user_path if current_user
   end
 
   def destroy

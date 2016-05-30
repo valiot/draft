@@ -24,10 +24,23 @@ Rails.application.routes.draw do
   get 'user/invitations', to: 'users#invitations', as: 'invitations'
   post 'user/invitations/accept/:id' => 'invitations#accept', as: 'accept_invitations'
   post 'user/invitations/reject/:id' => 'invitations#reject', as: 'reject_invitations'
-  get 'checkin', to: 'sessions#checkin', as: 'checkin'
-  get 'checkin/present/:id', to: 'attendees#present', as: 'present_checkin'
 
   root 'sessions#new'
 
   resources :identities
+
+  scope path: ':event', module: 'event', as: 'event' do
+    root to: 'sessions#new', as: 'main'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
+    get 'checkin', to: 'attendees#new', as: 'checkin'
+    post 'checkin', to: 'attendees#create', as: 'post_checkin'
+
+    get 'auth/:provider/callback', to: 'sessions#create'
+    post 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/:event')
+
+    get 'login', to: 'identities#login', as: 'login'
+    get 'signup', to: 'identities#new', as: 'signup'
+    resources :identities
+  end
 end
