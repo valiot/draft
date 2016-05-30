@@ -28,4 +28,19 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :identities
+
+  scope path: ':event', module: 'event', as: 'event' do
+    root to: 'sessions#new', as: 'main'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
+    get 'checkin', to: 'attendees#new', as: 'checkin'
+    post 'checkin', to: 'attendees#create', as: 'post_checkin'
+
+    get 'auth/:provider/callback', to: 'sessions#create'
+    post 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/:event')
+
+    get 'login', to: 'identities#login', as: 'login'
+    get 'signup', to: 'identities#new', as: 'signup'
+    resources :identities
+  end
 end
