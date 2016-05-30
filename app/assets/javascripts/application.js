@@ -20,3 +20,9 @@
 $('.uploadable-image').click(function(){
   $('#user_avatar').click();
 });
+
+$(document).on('turbolinks:load', function() {
+  setTimeout( function() {
+    $('.alert').alert('close');
+  }, 5000);
+});

@@ -5,7 +5,7 @@ class Event::AttendeesController < Event::ApplicationController
   def create
     if Attendee.create(user: current_user, event: current_event)
       session[:user_id] = nil
-      redirect_to event_main_path
+      redirect_to event_main_path, notice: 'Tu check-in ha quedado registrado.'
     else
       render event_checkin_path
     end
