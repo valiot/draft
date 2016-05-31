@@ -10,6 +10,14 @@ class Event < ApplicationRecord
     slug
   end
 
+  def self.find(input)
+    if input.is_a?(Integer)
+      super
+    else
+      find_by(slug: input)
+    end
+  end
+
   private
 
   def generate_slug

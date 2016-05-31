@@ -1,0 +1,5 @@
+<% if current_user == @next_user %>
+  <%= render 'selection' %>
+<% else %>
+  <%= render 'wait' %>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+  <h2 class="title">Elige un problema</h2>
+  <% @teams.where(event: current_event).each do |t| %>
+  <div class="card tag-form text-xs-center" id="team-<%= t.id %>">
+    <div class="card-block">
+      <h4 class="card-title"><%= t.name %></h4>
+    </div>
+    <% if t.leader %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item draft-team-list">
+        <h6 class="card-subtitle text-muted">LEADER</h6>
+        <%= attachment_image_tag(t.leader.profile, :image, class:"img-circle img-fluid") %>
+        <p class="card-text"><%= t.leader.name %> - <%= t.leader.profile.name %></p>
+      </li>
+      <li class="list-group-item draft-team-list">
+        <%= link_to "<i class='draft-check'></i>".html_safe,
+                    event_pick_team_path(current_event, t),
+                    remote: true, method: :post, data: { confirm: "Estás seguro?" },
+                    class: 'btn btn-primary btn-xs invitation-btn' %>
+      </li>
+    </ul>
+  <% end %>
+  </div>
+  <% end %>
+  </div>
+</div>

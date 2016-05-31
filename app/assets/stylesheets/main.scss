@@ -73,3 +73,27 @@ $disruptive-blue: #469cb6;
     margin-left: 0;
   }
 }
+
+.tag-form {
+  box-shadow: 0 0 0 5px $shadow1, 0 4px 20px $shadow2;
+  margin: 25px auto;
+  max-width: 400px;
+
+  .name-tag {
+    margin-top: 15px;
+  }
+
+  .img-tag {
+    padding: 10px;
+  }
+}
+
+.draft-team-list {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
