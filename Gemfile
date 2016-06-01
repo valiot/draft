@@ -12,6 +12,7 @@ gem 'refile', require: 'refile/rails', github: 'refile/refile', branch: 'master'
 gem 'refile-mini_magick'
 gem 'refile-s3'
 gem 'administrate-field-refile', github: 'acrogenesis/administrate-field-refile', branch: 'master'
+# gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.2'

@@ -6,8 +6,7 @@
         <% @attendees.order(:created_at).each do |attendee| %>
         <li class="list-group-item draft-team-list">
           <%= image_tag(attendee.user.picture_url, class:"img-circle img-fluid") %>
-          <p class="card-title"><%= attendee.user.name %></p>
-          <p class="card-subtitle text-muted"><%= attendee.user.profile.name %></p>
+          <h6 class="card-title"><%= attendee.user.name %></h6>
         </li>
         <% end %>
       </ul>
@@ -24,7 +23,7 @@
           <% team.users.each do |user| %>
             <li class="list-group-item draft-team-list">
               <%= image_tag(user.picture_url, class:"img-circle img-fluid") %>
-              <p class="card-text"><%= user.name %> - <%= user.profile.name %></p>
+              <h6 class="card-text"><%= user.name %></h6>
             </li>
           <% end %>
         </ul>

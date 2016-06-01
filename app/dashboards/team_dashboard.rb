@@ -11,6 +11,7 @@ class TeamDashboard < Administrate::BaseDashboard
     name: Field::String,
     event: Field::BelongsTo,
     users: Field::HasMany,
+    profiles: Field::String,
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -34,6 +35,7 @@ class TeamDashboard < Administrate::BaseDashboard
     :event,
     :id,
     :users,
+    :profiles,
     :created_at,
     :updated_at
   ].freeze
@@ -44,6 +46,7 @@ class TeamDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :event,
+    :profiles,
     :users
   ].freeze
 
