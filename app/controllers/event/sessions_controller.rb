@@ -3,11 +3,9 @@ class Event::SessionsController < ApplicationController
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
     redirect_to event_draft_path
-    # redirect_to event_checkin_url(current_event)
   end
 
   def new
-    # redirect_to event_checkin_path if current_user
     redirect_to event_draft_path if current_user
   end
 

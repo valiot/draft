@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-xs-12 col-md-4">
+  <div class="col-xs-12 col-md-3 col-md-offset-1">
     <h2 class="title">Lista de espera</h2>
-    <div class="card tag-form text-xs-center">
+    <div class="card tag-form">
       <ul class="list-group list-group-flush">
         <% @attendees.order(:created_at).each do |attendee| %>
         <li class="list-group-item draft-team-list">
