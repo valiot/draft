@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    event = Event.find_by(slug: (env['omniauth.params'] || session['omniauth.params'])['event'])
+    event = Event.find_by(slug: (env['omniauth.params'] || session['omniauth.params'])['event']) if (env['omniauth.params'] || session['omniauth.params'])
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
     if event && Attendee.find_by(user: current_user)
