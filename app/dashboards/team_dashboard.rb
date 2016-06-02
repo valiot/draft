@@ -46,7 +46,7 @@ class TeamDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :event,
-    :profiles,
+    # :profiles,
     :users
   ].freeze
 

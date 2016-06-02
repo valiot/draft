@@ -5,3 +5,73 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# e = Event.create(
+#   name: "Disrupting Angels",
+#   starts_at: "2016-06-1 20:00:00",
+#   finishes_at: "2016-06-2 20:00:00"
+# )
+
+e = Event.find_by(slug: 'disrupting-xignux')
+
+Team.create(
+  name: "VIAKABLE 1",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>1,
+    "Data"=>2,
+    "Designer"=>1,
+    "Random"=>1
+  }
+)
+
+Team.create(
+  name: "VIAKABLE 2",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>2,
+    "Data"=>2,
+    "Designer"=>1
+  }
+)
+
+Team.create(
+  name: "PROLEC 1",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>2,
+    "Maker"=>2,
+    "IFI"=>1
+  }
+)
+
+Team.create(
+  name: "PROLEC 2",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>1,
+    "Maker"=>3,
+    "IFI"=>1
+  }
+)
+
+Team.create(
+  name: "QUALTIA 1",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>1,
+    "Maker"=>1,
+    "Random"=>2,
+    "Industrial Designer"=>1
+  }
+)
+
+Team.create(
+  name: "QUALTIA 2",
+  event_id: e.id,
+  profiles: {
+    "Hacker"=>1,
+    "Maker"=>1,
+    "Random"=>1,
+    "Industrial Designer"=>2
+  }
+)
