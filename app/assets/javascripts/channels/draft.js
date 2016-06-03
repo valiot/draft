@@ -9,7 +9,11 @@ App.draft = App.cable.subscriptions.create('DraftChannel', {
       case "create_attendee":
         return $('#waiting_list').append('<li id="waiting-' + data.user_id + '" class="list-group-item draft-team-list"><img class="img-circle img-fluid" src="' + data.picture_url + '" alt="500x500?text=profile+picture"><h6 class="card-title">' + data.name + '</h6></li>');
       case "update_turn":
-        return Turbolinks.visit(window.location.toString());
+        if ($('#choose_problems')) {
+          return true;
+        }else {
+          return Turbolinks.visit(window.location.toString());
+        }
     }
   }
 });

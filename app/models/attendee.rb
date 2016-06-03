@@ -15,12 +15,4 @@ class Attendee < ApplicationRecord
     ActionCable.server.broadcast "draft", {action: "update_draft", user_id: user.id, team_id: team&.id}
     ActionCable.server.broadcast "draft", {action: "update_turn"}
   end
-
-  def event_attendees
-    event.attendees.where(team: nil).order(:created_at)
-  end
-
-  def turn
-    event_attendees.map { |e| e.user.id }.find_index(current_user.id)
-  end
 end
