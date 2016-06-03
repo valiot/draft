@@ -14,8 +14,9 @@
   <div class="card-block">
     <div class="row">
       <div class="col-xs-12">
-        <%= button_to 'Ya estoy aquí!', event_post_checkin_path, method: :post, class:"btn btn-success btn-block btn-login" %>
+        <%= button_to 'Ya estoy aquí!', event_post_checkin_path, id: 'print_button', method: :post, class:"btn btn-success btn-block btn-login" %>
       </div>
     </div>
   </div>
 </div>
+<%= render 'print' %>
