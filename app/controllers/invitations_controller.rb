@@ -2,26 +2,20 @@ class InvitationsController < ApplicationController
   before_action :set_invitation, only: [:accept, :reject]
 
   def accept
-    respond_to do |format|
-      if @invitation.update(status: :accepted)
-        flash.now[:notice] = 'Aceptaste la invitación'
-        format.js
-      else
-        format.html { render invitations_path }
-        format.json { render json: @invitation.errors, status: :unprocessable_entity }
-      end
+    if @invitation.update(status: :accepted)
+      flash[:notice] = 'Aceptaste la invitación'
+      redirect_to edit_user_path
+    else
+      render invitations_path
     end
   end
 
   def reject
-    respond_to do |format|
-      if @invitation.update(status: :rejected)
-        flash.now[:alert] = 'Rechazaste la invitación.'
-        format.js
-      else
-        format.html { render invitations_path }
-        format.json { render json: @invitation.errors, status: :unprocessable_entity }
-      end
+    if @invitation.update(status: :rejected)
+      flash[:alert] = 'Rechazaste la invitación.'
+      redirect_to edit_user_path
+    else
+      render invitations_path
     end
   end
 

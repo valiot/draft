@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.action_cable.url = "ws://draft.disruptiveangels.com/cable"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

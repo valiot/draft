@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'checkin', to: 'attendees#new', as: 'checkin'
     post 'checkin', to: 'attendees#create', as: 'post_checkin'
+    get 'teams/draft', to: 'teams#draft', as: 'draft'
+    get 'teams/select', to: 'teams#select', as: 'select'
+    post 'teams/select/pick/:id' => 'teams#pick', as: 'pick_team'
 
     get 'auth/:provider/callback', to: 'sessions#create'
     post 'auth/:provider/callback', to: 'sessions#create'
@@ -41,6 +44,10 @@ Rails.application.routes.draw do
 
     get 'login', to: 'identities#login', as: 'login'
     get 'signup', to: 'identities#new', as: 'signup'
+
     resources :identities
   end
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
 end

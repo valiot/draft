@@ -2,11 +2,11 @@ class Event::SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
-    redirect_to event_checkin_url(current_event)
+    redirect_to event_draft_path
   end
 
   def new
-    redirect_to event_checkin_path if current_user
+    redirect_to event_draft_path if current_user
   end
 
   def destroy

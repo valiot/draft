@@ -9,8 +9,8 @@ class User < ApplicationRecord
   attachment :avatar, type: :image
 
   def picture_url
-    return avatar_url if avatar_id
-    return image_url if image_url
+    return avatar_url unless avatar_id.blank?
+    return image_url unless image_url.blank?
     'http://placehold.it/500x500?text=Profile+Picture'
   end
 

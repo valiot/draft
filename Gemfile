@@ -12,6 +12,7 @@ gem 'refile', require: 'refile/rails', github: 'refile/refile', branch: 'master'
 gem 'refile-mini_magick'
 gem 'refile-s3'
 gem 'administrate-field-refile', github: 'acrogenesis/administrate-field-refile', branch: 'master'
+# gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.2'
@@ -39,7 +40,7 @@ gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

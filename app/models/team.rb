@@ -2,4 +2,16 @@ class Team < ApplicationRecord
   belongs_to :event
   has_many :attendees
   has_many :users, through: :attendees
+
+  def has_available_profile(profile)
+    profiles[profile].present? && profiles[profile] > 0
+  end
+
+  def substract_profile(profile)
+    profiles[profile] -= 1
+  end
+
+  def missing_profiles
+    profiles.flat_map {|k,v| ("#{k},"*v).split(',')}
+  end
 end

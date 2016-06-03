@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def invitations
     if current_user.pending_invitations?
-      @invitations = current_user.invitations.where(status: 0)
+      @invitations = current_user.invitations.where(status: :pending)
     else
       redirect_to edit_user_path, notice: 'No tienes invitaciones pendientes.'
     end

@@ -29,7 +29,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :profile,
-    :invitations,
+    :shirt_size,
     :id
   ].freeze
 
