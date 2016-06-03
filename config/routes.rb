@@ -44,6 +44,10 @@ Rails.application.routes.draw do
 
     get 'login', to: 'identities#login', as: 'login'
     get 'signup', to: 'identities#new', as: 'signup'
+
     resources :identities
   end
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
 end

@@ -7,7 +7,7 @@ class Event::TeamsController < ApplicationController
   def select
     @attendees = current_event.attendees.where(team: nil)
     @next_user = next_user
-    @teams =  Team.where(event: current_event).select{ |t| t.has_available_profile(current_user.profile.name) }
+    @teams = Team.where(event: current_event).select{ |t| t.has_available_profile(current_user.profile.name) }
     @turns = turns
   end
 
@@ -15,10 +15,11 @@ class Event::TeamsController < ApplicationController
     respond_to do |format|
       if team.has_available_profile(attendee.user.profile.name) && attendee.update(team: team)
         team.substract_profile(attendee.user.profile.name)
-        team.save
-        flash.now[:notice] = 'Tu elección de equipo ha sido guardada.'
-        format.js
-        redirect_to event_logout_path
+        if team.save
+          flash.now[:notice] = 'Tu elección de equipo ha sido guardada.'
+          format.js
+          format.html { redirect_to event_logout_path }
+        end
       else
         format.html { render event_pick_team_path }
         format.json { render json: attendee.errors, team: :unprocessable_entity }

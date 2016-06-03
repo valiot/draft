@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require_tree ./channels
 
 $('.uploadable-image').click(function(){
   $('#user_avatar').click();

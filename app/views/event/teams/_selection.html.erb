@@ -16,7 +16,7 @@
       <li class="list-group-item draft-team-list">
         <%= link_to "<i class='draft-check'></i>".html_safe,
                     event_pick_team_path(current_event, t),
-                    remote: true, method: :post, data: { confirm: "Estás seguro?" },
+                    method: :post, data: { confirm: "Estás seguro?" },
                     class: 'btn btn-primary btn-xs invitation-btn' %>
       </li>
     </ul>
