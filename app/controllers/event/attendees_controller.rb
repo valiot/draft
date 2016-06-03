@@ -5,7 +5,9 @@ class Event::AttendeesController < ApplicationController
   def create
     if Attendee.create(user: current_user, event: current_event)
       session[:user_id] = nil
-      redirect_to event_main_path, notice: 'Tu check-in ha quedado registrado.'
+      flash[:notice] = 'Tu check-in ha quedado registrado.'
+      render js: "var win = window.open('http://localhost:3000/disrupting-xignux/', '_blank');
+  win.focus();window.setTimeout(function(){this.close();},1000)"
     else
       render event_checkin_path
     end
