@@ -1,7 +1,7 @@
 class Event::TeamsController < ApplicationController
   def draft
     @attendees = current_event.attendees.where(team: nil)
-    @teams = Team.all
+    @teams = Team.where(event: current_event)
   end
 
   def select
