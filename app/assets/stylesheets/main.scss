@@ -147,6 +147,8 @@ $disruptive-blue: #469cb6;
     overflow: hidden;
   }
   img {
+    max-height: 50px;
+    max-width: 50px;
     display: block;
     width: 100%;
   }
