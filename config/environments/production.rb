@@ -1,5 +1,4 @@
 Rails.application.configure do
-  config.action_cable.url = "wss://draft.disruptiveangels.com/cable"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -36,8 +35,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Action Cable endpoint configuration
-  # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  config.action_cable.url = 'wss://draft.disruptiveangels.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://draft.disruptiveangels.com', /https:\/\/draft.disruptiveangels.*/ ]
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
