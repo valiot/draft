@@ -19,7 +19,7 @@
 
     <div class="teams">
       <% @teams.where(event: current_event).each do |team| %>
-        <div class="card team-list">
+        <div class="card team-list team-list--third">
           <h4 class="team-problem"><%= team.name %></h4>
 
           <ul id="team-<%= team.id %>" class="team-members">

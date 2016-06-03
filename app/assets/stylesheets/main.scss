@@ -102,11 +102,17 @@ $disruptive-blue: #469cb6;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  &--center {
+    justify-content: center;
+  }
 }
 
 .team-list {
-  width: calc(33.33% - .5rem);
   padding: 1rem;
+  &--third {
+    width: calc(33.33% - .5rem);
+  }
 }
 
 .team-problem {
