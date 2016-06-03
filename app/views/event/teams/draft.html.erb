@@ -1,37 +1,37 @@
-<div id="update_draft">
-  <div class="row">
-    <div class="col-xs-12 col-md-3">
-      <h2 class="title">Lista de espera</h2>
-      <div class="card">
-        <ul id="waiting_list" class="list-group list-group-flush">
-          <% @attendees.order(:created_at).each do |attendee| %>
-            <li id="waiting-<%= attendee.user.id %>" class="list-group-item draft-team-list">
-              <%= image_tag(attendee.user.picture_url, class:"img-circle img-fluid") %>
-              <h6 class="card-title"><%= attendee.user.name %></h6>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-9">
-      <h2 class="title">Lista de equipos</h2>
-      <div class="row">
+<div id="update_draft" class="row">
+  <div class="col-md-3 col-xs-12">
+    <h2 class="title">Pendientes</h2>
+
+    <ul id="waiting_list" class="card wait-list">
+      <% @attendees.order(:created_at).each do |attendee| %>
+        <li id="waiting-<%= attendee.user.id %>" class="team-member">
+          <%= image_tag(attendee.user.picture_url, class:"img-circle img-fluid") %>
+          <p class="team-member-name"><%= attendee.user.name %></p>
+        </li>
+
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-9 col-xs-12">
+    <h2 class="title">Lista de equipos</h2>
+
+    <div class="teams">
         <% @teams.where(event: current_event).each do |team| %>
-        <div class="card col-xs-4 text-xs-center">
-          <div class="card-block">
-            <h4 class="card-title"><%= team.name %></h4>
-          </div>
-          <ul id="team-<%= team.id %>" class="list-group list-group-flush">
+
+        <div class="card team-list">
+          <h4 class="team-problem"><%= team.name %></h4>
+
+          <ul id="team-<%= team.id %>" class="team-members">
             <% team.users.each do |user| %>
-            <li class="list-group-item draft-team-list">
+            <li class="team-member">
               <%= image_tag(user.picture_url, class:"img-circle img-fluid") %>
-              <h6 class="card-text"><%= user.name %></h6>
+              <p class="team-member-name"><%= user.name %></p>
             </li>
             <% end %>
           </ul>
         </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
