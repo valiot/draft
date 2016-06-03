@@ -1,6 +1,6 @@
 <% content_for :title, 'Inicia sessión' %>
 <div class="card card-block card-form">
-  <%= form_tag "/auth/identity/callback" do %>
+  <%= form_tag "/auth/identity/callback?event=#{current_event.slug}" do %>
     <div class="form-group row">
       <%= label_tag :auth_key, 'Email', class: 'col-xs-2 form-control-label' %>
       <div class="col-xs-9 col-xs-offset-1">
