@@ -16,64 +16,37 @@ e = Event.find_by(slug: 'disrupting-xignux')
 Team.create(
   name: "VIAKABLE 1",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>1,
-    "Data"=>2,
-    "Designer"=>1,
-    "Random"=>1
-  }
+  profiles: { "Hacker"=>1, "Data"=>1, "Designer"=>1, "Random"=>1 }
 )
 
 
 Team.create(
   name: "QUALTIA 1",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>1,
-    "Maker"=>1,
-    "Random"=>2,
-    "Industrial Designer"=>1
-  }
+  profiles: { "Hacker"=>1, "Maker"=>1, "Random"=>1, "Industrial Designer"=>1 }
 )
 
 
 Team.create(
   name: "PROLEC GE 1",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>2,
-    "Maker"=>2,
-    "IFI"=>1
-  }
+  profiles: { "Hacker"=>2, "Maker"=>1, "IFI"=>1 }
 )
 
 Team.create(
   name: "VIAKABLE 2",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>2,
-    "Data"=>2,
-    "Designer"=>1
-  }
+  profiles: { "Hacker"=>2, "Data"=>1, "Designer"=>1 }
 )
 
 Team.create(
   name: "QUALTIA 2",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>1,
-    "Maker"=>1,
-    "Random"=>1,
-    "Industrial Designer"=>2
-  }
+  profiles: { "Hacker"=>1, "Maker"=>1, "Industrial Designer"=>2 }
 )
 
 Team.create(
   name: "PROLEC GE 2",
   event_id: e.id,
-  profiles: {
-    "Hacker"=>1,
-    "Maker"=>3,
-    "IFI"=>1
-  }
+  profiles: { "Hacker"=>1, "Maker"=>3 }
 )
