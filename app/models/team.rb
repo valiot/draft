@@ -14,4 +14,8 @@ class Team < ApplicationRecord
   def substract_profile(profile)
     profiles[profile] -= 1
   end
+
+  def missing_profiles
+    profiles.flat_map {|k,v| ("#{k},"*v).split(',')}
+  end
 end

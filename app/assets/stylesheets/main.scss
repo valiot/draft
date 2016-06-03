@@ -93,7 +93,73 @@ $disruptive-blue: #469cb6;
   align-items: center;
   img {
     max-width: 50px;
-    margin-right: 30px;
-    margin-left: 30px;
+    margin-right: 1rem;
+  }
+}
+
+
+.teams {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+.team-list {
+  padding: 1rem;
+  &--third {
+    width: calc(33.33% - .5rem);
+  }
+}
+
+.team-problem {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.team-members {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wait-list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #e5e5e5;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+  figure {
+    max-width: 50px;
+    margin-right: .5rem;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+  img {
+    max-height: 50px;
+    max-width: 50px;
+    display: block;
+    width: 100%;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
 }
