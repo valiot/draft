@@ -16,11 +16,11 @@
     <div class="row">
       <div class="col-xs-6">
         <%= link_to "<i class='draft-times'></i>".html_safe, reject_invitations_path(i),
-                    remote: true, method: :post, class: 'btn btn-danger btn-xs invitation-btn' %>
+                    method: :post, class: 'btn btn-danger btn-xs invitation-btn' %>
       </div>
       <div class="col-xs-6">
         <%= link_to "<i class='draft-check'></i>".html_safe, accept_invitations_path(i),
-                    remote: true, method: :post, class: 'btn btn-success btn-xs invitation-btn' %>
+                    method: :post, class: 'btn btn-success btn-xs invitation-btn' %>
       </div>
     </div>
   </div>
