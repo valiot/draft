@@ -11,7 +11,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    image: Field::Refile,
+    # image: Field::Refile,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -33,7 +33,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     :users,
     :id,
     :name,
-    :image,
+    # :image,
     :created_at,
     :updated_at
   ].freeze
@@ -44,7 +44,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :users,
     :name,
-    :image
+    # :image
   ].freeze
 
   # Overwrite this method to customize how profiles are displayed
