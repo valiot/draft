@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601161124) do
+ActiveRecord::Schema.define(version: 20160630180214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160601161124) do
     t.datetime "finishes_at"
     t.string   "image_filename"
     t.string   "slug"
+    t.text     "label_xml"
     t.index ["slug"], name: "index_events_on_slug", unique: true, using: :btree
   end
 
