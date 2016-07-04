@@ -6,7 +6,7 @@ class Event::SessionsController < ApplicationController
   end
 
   def new
-    redirect_to event_draft_path if current_user
+    redirect_to event_select_path if current_user
   end
 
   def destroy

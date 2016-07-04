@@ -1,8 +1,6 @@
 class Event::AttendeesController < ApplicationController
   def new
-    if Attendee.find_by(user: current_user).nil?
-      Attendee.find_by(user_id: current_user.id)
-    else
+    unless Attendee.find_by(user: current_user).nil?
       redirect_to event_select_path
     end
   end
