@@ -41,7 +41,7 @@ class EventDashboard < Administrate::BaseDashboard
     :name,
     :starts_at,
     :finishes_at,
-    :image,
+    # :image,
     :created_at,
     :updated_at
   ].freeze
