@@ -15,8 +15,8 @@ class UserDashboard < Administrate::BaseDashboard
     name: Field::String,
     email: Field::String,
     image_url: Field::String,
-    role: EnumField,
-    shirt_size: EnumField,
+    role: Field::Enum,
+    shirt_size: Field::Enum,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

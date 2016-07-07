@@ -6,7 +6,7 @@ gem 'omniauth-github'
 gem 'omniauth-identity'
 gem 'omniauth-google-oauth2'
 gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'administrate', github: 'DisruptiveAngels/administrate', branch: 'rails5'
+gem 'administrate', github: 'DisruptiveAngels/administrate', branch: 'merge-master-rails5'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 gem 'refile', require: 'refile/rails', github: 'refile/refile', branch: 'master'
 gem 'refile-mini_magick'
@@ -14,13 +14,14 @@ gem 'refile-s3'
 # gem 'administrate-field-refile', github: 'acrogenesis/administrate-field-refile', branch: 'master'
 # gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
 gem 'bourbon'
+gem 'administrate-field-enum'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.2'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0.rc1'
+gem 'rails', '5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

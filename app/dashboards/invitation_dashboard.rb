@@ -11,7 +11,7 @@ class InvitationDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     event: Field::BelongsTo,
     id: Field::Number,
-    status: EnumField,
+    status: Field::Enum,
     token: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
