@@ -9,6 +9,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invitations: Field::HasMany,
+    users: Field::HasMany,
     attendees: Field::HasMany,
     teams: Field::HasMany,
     id: Field::Number,
@@ -37,6 +38,7 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :attendees,
+    :users,
     :teams,
     :id,
     :name,
