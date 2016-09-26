@@ -47,7 +47,8 @@ class InvitationDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :event
+    :event,
+    :status
   ].freeze
 
   # Overwrite this method to customize how invitations are displayed
