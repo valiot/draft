@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :profile, required: false
   has_many :invitations
+  has_many :accepted_invitations, -> { where(status: :accepted) }, class_name: 'Invitation'
   has_many :attendees
 
   enum shirt_size: [:s, :m, :l, :xl]
