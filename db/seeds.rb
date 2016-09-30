@@ -11,42 +11,42 @@
 #   finishes_at: "2016-06-2 20:00:00"
 # )
 
-# e = Event.find_by(slug: 'disrupting-xignux')
+# e = Event.find_by(slug: 'disrupting-katcon’)
 #
-# Team.find(1).update(
-#   name: "VIAKABLE 1",
+#
+# Team.create(
+#   name: “SOLDADURA 1",
 #   event_id: e.id,
-#   profiles: { "Data"=>1, "Designer"=>1, "Random"=>1, "Industrial Designer"=>1 }
+#   profiles: { "Hacker"=>2, "Maker"=>1, "Random"=>1, “IFI”=>1 }
 # )
 #
 #
 # Team.create(
-#   name: "QUALTIA 1",
+#   name: “SOLDADURA 2”,
 #   event_id: e.id,
-#   profiles: { "Hacker"=>1, "Maker"=>1, "Random"=>1, "Industrial Designer"=>1 }
-# )
-#
-#
-# Team.create(
-#   name: "PROLEC GE 1",
-#   event_id: e.id,
-#   profiles: { "Hacker"=>2, "Maker"=>1, "IFI"=>1 }
-# )
-#
-# Team.find(4).update(
-#   name: "VIAKABLE 2",
-#   event_id: e.id,
-#   profiles: { "Hacker"=>1, "Designer"=>1, "IFI"=>1, "Random"=>1}
+#   profiles: { "Hacker"=>2, “Data”=>1, “Non IT”=>1, “Random”=>1 }
 # )
 #
 # Team.create(
-#   name: "QUALTIA 2",
+#   name: “ANNULUS 1“,
 #   event_id: e.id,
-#   profiles: { "Hacker"=>1, "Maker"=>1, "Industrial Designer"=>2 }
+#   profiles: { "Hacker"=>1, “Industrial Designer”=>1, “Math”=>1, "Random"=>1, “Maker”=>1}
 # )
 #
 # Team.create(
-#   name: "PROLEC GE 2",
+#   name: “ANNULUS 2",
 #   event_id: e.id,
-#   profiles: { "Hacker"=>1, "Maker"=>3 }
+#   profiles: { "Hacker"=>1, "Maker"=>1, "Industrial Designer"=>1, “Random”=>1, “Math”=>1 }
+# )
+#
+# Team.create(
+#   name: “CICLO 1”,
+#   event_id: e.id,
+#   profiles: { "Hacker"=>1, "Maker"=>1, “Non IT”=>1, “Data”=>1, “Random”=>1 }
+# )
+#
+# Team.create(
+#   name: “CICLO 2”,
+#   event_id: e.id,
+#   profiles: { "Hacker"=>2, "Maker"=>1, “Non IT”=>1, “Random”=>1}
 # )
