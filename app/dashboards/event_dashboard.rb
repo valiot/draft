@@ -9,7 +9,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invitations: Field::HasMany,
-    users: Field::HasMany,
+    # users: Field::HasMany,
     attendees: Field::HasMany,
     teams: Field::HasMany,
     id: Field::Number,
