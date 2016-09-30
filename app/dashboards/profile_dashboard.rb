@@ -44,7 +44,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :users,
     :name,
-    # :image
+    :image
   ].freeze
 
   # Overwrite this method to customize how profiles are displayed
