@@ -11,7 +11,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    # image: Field::Refile,
+    image: Field::Refile,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
