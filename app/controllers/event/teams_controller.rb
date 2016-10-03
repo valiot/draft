@@ -7,12 +7,12 @@ class Event::TeamsController < ApplicationController
   def select
     @attendees = current_event.attendees.where(team: nil)
     @next_user = next_user
-    @teams = Team.where(event: current_event).select { |t| t.has_available_profile(current_user.profile.name) }
+    @teams = Team.where(event: current_event).select { |t| t.available_profile?(current_user.profile.name) }
     @turns = turns
   end
 
   def pick
-    if team.has_available_profile(attendee.user.profile.name) && attendee.update(team: team)
+    if team.available_profile?(attendee.user.profile.name) && attendee.update(team: team)
       team.substract_profile(attendee.user.profile.name)
       team.save
       redirect_to event_logout_path, notice: 'Tu elección de equipo ha sido guardada.'
