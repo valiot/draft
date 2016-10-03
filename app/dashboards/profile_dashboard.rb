@@ -33,7 +33,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     :users,
     :id,
     :name,
-    # :image,
+    :image,
     :created_at,
     :updated_at
   ].freeze
