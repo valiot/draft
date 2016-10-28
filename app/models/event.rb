@@ -3,8 +3,8 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :attendees
   has_many :teams
-  has_many :users
-  # has_many :invited_users, through: :invitations, class_name: 'User', source: :user
+  has_many :users, through: :attendees
+  has_many :invited_users, through: :invitations, class_name: 'User', source: :user
   attachment :image
 
   def to_param

@@ -12,6 +12,6 @@ class Team < ApplicationRecord
   end
 
   def missing_profiles
-    profiles.flat_map {|k,v| ("#{k},"*v).split(',')}
+    profiles.flat_map { |k, v| ("#{k}," * v).split(',') }
   end
 end
