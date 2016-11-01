@@ -21,7 +21,11 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     existing_user = User.find_by(email: auth.info.email)
-    return existing_user if existing_user
+    current_event = Event.last # TODO DELETE
+    if existing_user
+      Invitation.create(event: current_event, user: existing_user)
+      return existing_user
+    end
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -30,7 +34,7 @@ class User < ApplicationRecord
       user.image_url = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at) if auth.credentials.expires
-      user.invitations << Invitation.create(event_id: 5) # TODO DELETE
+      user.invitations << Invitation.create(event_id: current_event)
       user.save!
     end
   end

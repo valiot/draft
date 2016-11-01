@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     if event && Attendee.find_by(user: current_user, event: event)
       redirect_to event_select_path(event)
-    elsif event
+    elsif event && Invitation.find_by(user: current_user, event: event, status: :accepted)
       redirect_to event_checkin_path(event)
     else
       redirect_to edit_user_path
