@@ -34,7 +34,7 @@ class User < ApplicationRecord
       user.image_url = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at) if auth.credentials.expires
-      user.invitations << Invitation.create(event_id: current_event)
+      user.invitations << Invitation.create(event: current_event)
       user.save!
     end
   end
