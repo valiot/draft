@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     event = Event.find_by(slug: (env['omniauth.params'] || session['omniauth.params'])['event'] || params[:event]) if (env['omniauth.params'] || session['omniauth.params'] || params[:event])
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
-    if event && Attendee.find_by(user: current_user)
+    if event && Attendee.find_by(user: current_user, event: event)
       redirect_to event_select_path(event)
     elsif event
       redirect_to event_checkin_path(event)
