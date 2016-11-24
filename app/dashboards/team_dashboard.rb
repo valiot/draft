@@ -10,7 +10,7 @@ class TeamDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     name: Field::String,
     event: Field::BelongsTo,
-    users: Field::HasMany,
+    attendees: Field::HasMany,
     profiles: Field::String,
     id: Field::Number,
     created_at: Field::DateTime,
@@ -34,7 +34,7 @@ class TeamDashboard < Administrate::BaseDashboard
     :name,
     :event,
     :id,
-    :users,
+    :attendees,
     :profiles,
     :created_at,
     :updated_at
@@ -47,7 +47,7 @@ class TeamDashboard < Administrate::BaseDashboard
     :name,
     :event,
     # :profiles,
-    :users
+    :attendees
   ].freeze
 
   # Overwrite this method to customize how invitations are displayed
