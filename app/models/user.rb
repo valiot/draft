@@ -23,7 +23,7 @@ class User < ApplicationRecord
     existing_user = User.find_by(email: auth.info.email)
     current_event = Event.last # TODO DELETE
     if existing_user
-      Invitation.create(event: current_event, user: existing_user)
+      Invitation.find_or_create_by(event: current_event, user: existing_user)
       return existing_user
     end
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
