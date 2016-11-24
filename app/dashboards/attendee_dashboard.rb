@@ -53,6 +53,6 @@ class AttendeeDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(attendee)
-    attendee.user.name
+    "#{attendee.user.name} #{attendee.event.name}"
   end
 end
