@@ -12,7 +12,7 @@ class User < ApplicationRecord
   def picture_url
     return avatar_url unless avatar_id.blank?
     return image_url unless image_url.blank?
-    'http://placehold.it/500x500?text=Profile+Picture'
+    'https://placehold.it/500x500?text=Profile+Picture'
   end
 
   def pending_invitations?
