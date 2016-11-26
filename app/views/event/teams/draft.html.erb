@@ -34,7 +34,7 @@
             <% team.missing_profiles.each do |profile| %>
               <li class="team-member">
                 <figure class="img-fluid">
-                  <%= attachment_image_tag(Profile.find_by(name: profile.titleize), :image) %>
+                  <%= attachment_image_tag(Profile.find_by(name: profile), :image) %>
                 </figure>
               </li>
             <% end %>
