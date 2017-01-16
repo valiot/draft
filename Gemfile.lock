@@ -1,21 +1,4 @@
 GIT
-  remote: git://github.com/DisruptiveAngels/administrate.git
-  revision: d77c9155ef38d891df1f89f388267a17ec84a8cf
-  branch: merge-master-rails5
-  specs:
-    administrate (0.2.2)
-      autoprefixer-rails (~> 6.0)
-      datetime_picker_rails (~> 0.0.7)
-      jquery-rails (~> 4.0)
-      kaminari (~> 0.17)
-      momentjs-rails (~> 2.8)
-      neat (~> 1.1)
-      normalize-rails (~> 3.0)
-      rails (>= 4.0, < 5.1)
-      sass-rails (~> 5.0)
-      selectize-rails (~> 0.6)
-
-GIT
   remote: git://github.com/refile/refile.git
   revision: d7a42dcd7cf631ba94b01231f535bda061f6af92
   branch: master
@@ -79,11 +62,23 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    administrate-field-enum (0.0.2)
-      administrate (>= 0.2.2, < 0.3.0)
-      rails (>= 4.0, < 5.1)
-    administrate-field-refile (0.0.6)
-      administrate (>= 0.2.0, < 0.3.0)
+    administrate (0.3.0)
+      autoprefixer-rails (~> 6.0)
+      bourbon (~> 4.2)
+      datetime_picker_rails (~> 0.0.7)
+      jquery-rails (~> 4.0)
+      kaminari (~> 0.16)
+      momentjs-rails (~> 2.8)
+      neat (~> 1.1)
+      normalize-rails (~> 3.0)
+      rails (>= 4.2, < 5.1)
+      sass-rails (~> 5.0)
+      selectize-rails (~> 0.6)
+    administrate-field-enum (0.0.3)
+      administrate
+      rails (>= 4.2, < 5.1)
+    administrate-field-refile (0.0.7)
+      administrate (>= 0.2.0)
       rails (>= 4.2, < 5.1)
       refile (~> 0.6)
     arel (7.1.4)
@@ -311,7 +306,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  administrate!
+  administrate
   administrate-field-enum
   administrate-field-refile
   bcrypt (~> 3.1.7)
