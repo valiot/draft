@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+# gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
+gem 'administrate'
+gem 'administrate-field-enum'
+gem 'administrate-field-refile'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bourbon'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-gem 'omniauth-identity'
 gem 'omniauth-google-oauth2'
-gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'administrate'
-gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+gem 'omniauth-identity'
 gem 'refile', require: 'refile/rails', github: 'refile/refile', branch: 'master'
 gem 'refile-mini_magick'
 gem 'refile-s3'
-gem 'administrate-field-refile'
-# gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
-gem 'bourbon'
-gem 'administrate-field-enum'
+gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.2'
@@ -56,16 +56,16 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rubocop'
-  gem 'scss_lint', require: false
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'
+  gem 'meta_request'
+  gem 'rubocop'
+  gem 'scss_lint', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'meta_request'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
