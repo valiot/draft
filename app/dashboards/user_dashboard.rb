@@ -14,7 +14,7 @@ class UserDashboard < Administrate::BaseDashboard
     attendees: Field::HasMany,
     name: Field::String,
     email: Field::String,
-    image_url: Field::String,
+    image_url: Field::Image,
     role: Field::Enum,
     shirt_size: Field::Enum,
     cellphone: Field::Telephone,

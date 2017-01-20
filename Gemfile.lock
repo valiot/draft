@@ -77,6 +77,9 @@ GEM
     administrate-field-enum (0.0.3)
       administrate
       rails (>= 4.2, < 5.1)
+    administrate-field-image (1.0.0)
+      administrate (>= 0.2.0.rc1)
+      rails (>= 4.2)
     administrate-field-refile (0.0.7)
       administrate (>= 0.2.0)
       rails (>= 4.2, < 5.1)
@@ -311,6 +314,7 @@ PLATFORMS
 DEPENDENCIES
   administrate
   administrate-field-enum
+  administrate-field-image
   administrate-field-refile
   administrate-field-telephone
   bcrypt (~> 3.1.7)
