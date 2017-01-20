@@ -17,8 +17,9 @@ class UserDashboard < Administrate::BaseDashboard
     image_url: Field::String,
     role: Field::Enum,
     shirt_size: Field::Enum,
+    cellphone: Field::Telephone,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -44,8 +45,9 @@ class UserDashboard < Administrate::BaseDashboard
     :image_url,
     :role,
     :shirt_size,
+    :cellphone,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -58,6 +60,7 @@ class UserDashboard < Administrate::BaseDashboard
     :image_url,
     :role,
     :shirt_size,
+    :cellphone
   ].freeze
 
   # Overwrite this method to customize how users are displayed

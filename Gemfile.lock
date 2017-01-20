@@ -81,6 +81,9 @@ GEM
       administrate (>= 0.2.0)
       rails (>= 4.2, < 5.1)
       refile (~> 0.6)
+    administrate-field-telephone (0.0.1)
+      administrate
+      rails (>= 4.2, < 5.1)
     arel (7.1.4)
     ast (2.3.0)
     autoprefixer-rails (6.6.1)
@@ -309,6 +312,7 @@ DEPENDENCIES
   administrate
   administrate-field-enum
   administrate-field-refile
+  administrate-field-telephone
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
