@@ -3,7 +3,7 @@
     <%= attachment_image_tag(current_user.profile, :image, class: 'img-fluid', style: 'max-height: 200px;') %>
   </div>
 </div>
-<% if current_user == @next_user %>
+<% if current_user == @next_user && current_event.choose_team? %>
   <%= render 'selection' %>
 <% else %>
   <%= render 'wait' %>

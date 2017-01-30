@@ -19,6 +19,7 @@ class EventDashboard < Administrate::BaseDashboard
     finishes_at: Field::DateTime,
     label_xml: FileField,
     image: Field::Refile,
+    choose_team: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -38,6 +39,7 @@ class EventDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :choose_team,
     :attendees,
     :users,
     :invited_users,
@@ -46,9 +48,7 @@ class EventDashboard < Administrate::BaseDashboard
     :name,
     :starts_at,
     :finishes_at,
-    :image,
-    :created_at,
-    :updated_at
+    :image
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -56,6 +56,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :choose_team,
     :starts_at,
     :finishes_at,
     :label_xml,
