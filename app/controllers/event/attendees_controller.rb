@@ -1,8 +1,7 @@
 class Event::AttendeesController < ApplicationController
   def new
-    unless Attendee.find_by(user: current_user, event: current_event).nil?
-      redirect_to event_select_path
-    end
+    redirect_to edit_user_path unless current_event.checkin?
+    redirect_to event_select_path unless Attendee.find_by(user: current_user, event: current_event).nil?
   end
 
   def create

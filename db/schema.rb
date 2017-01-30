@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130054412) do
+ActiveRecord::Schema.define(version: 20170130060511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170130054412) do
     t.string   "slug"
     t.text     "label_xml"
     t.boolean  "choose_team",    default: false
+    t.boolean  "checkin",        default: false
     t.index ["slug"], name: "index_events_on_slug", unique: true, using: :btree
   end
 
