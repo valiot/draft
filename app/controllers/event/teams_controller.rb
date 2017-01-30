@@ -1,4 +1,6 @@
 class Event::TeamsController < ApplicationController
+  before_filter :require_login, except: :draft
+
   def draft
     @attendees = current_event.attendees.where(team: nil)
     @teams = Team.where(event: current_event)
