@@ -8,19 +8,19 @@
       <h6 class="card-subtitle text-muted"><%= invitation.event.starts_at.strftime("%d de %b del %Y @ %H:%M PM") %></h6>
     </div>
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-sm-12">
         <%= attachment_image_tag(invitation.event, :image, class:"card-img-top img-fluid") %>
       </div>
     </div>
     <div class="card-block">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-sm-6">
         <%= link_to "<i class='draft-times'></i>".html_safe, reject_invitations_path(invitation),
-                    method: :post, class: 'btn btn-danger btn-xs invitation-btn' %>
+                    method: :post, class: 'btn btn-danger btn-sm invitation-btn' %>
       </div>
-      <div class="col-xs-6">
+      <div class="col-sm-6">
         <%= link_to "<i class='draft-check'></i>".html_safe, accept_invitations_path(invitation),
-                    method: :post, class: 'btn btn-success btn-xs invitation-btn' %>
+                    method: :post, class: 'btn btn-success btn-sm invitation-btn' %>
       </div>
     </div>
   </div>

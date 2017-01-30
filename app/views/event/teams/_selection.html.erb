@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-sm-12">
     <h2 id="choose_problem" class="title">Elige un problema</h2>
 
     <div class="teams teams--center">
@@ -20,7 +20,7 @@
               <%= link_to "<i class='draft-check'></i>".html_safe,
               event_pick_team_path(current_event, team),
               method: :post, data: { confirm: "¿Estás seguro que eliges al equipo #{team.name}?" },
-              class: 'btn btn-primary btn-xs invitation-btn' %>
+              class: 'btn btn-primary btn-sm invitation-btn' %>
             </li>
           </ul>
         </div>

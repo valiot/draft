@@ -33,7 +33,7 @@ module Administrate
         self.class.permitted_attribute(attribute)
       end
 
-      def resources(page = 1)
+      def resources(page = nil)
         data.page(page).per(limit)
       end
 
