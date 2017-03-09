@@ -15,7 +15,7 @@ class Event::TeamsController < ApplicationController
 
   def pick
     if team.available_profile?(attendee.user.profile.name) && attendee.update(team: team)
-      team.substract_profile(attendee.user.profile.name)
+      # team.substract_profile(attendee.user.profile.name)
       team.save
       redirect_to event_logout_path, notice: 'Tu elección de equipo ha sido guardada.'
     else

@@ -27,6 +27,10 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  # printing stuff
+  get 'print', to: 'printers#print'
+  resources :events, only: :show, format: :js
+
   resources :identities
 
   scope path: ':event', module: 'event', as: 'event' do

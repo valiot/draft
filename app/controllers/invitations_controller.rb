@@ -4,7 +4,7 @@ class InvitationsController < ApplicationController
   def accept
     if @invitation.update(status: :accepted)
       flash[:notice] = 'Aceptaste la invitación'
-      redirect_to edit_user_path
+      redirect_decisions
     else
       render invitations_path
     end

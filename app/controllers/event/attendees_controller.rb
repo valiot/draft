@@ -6,11 +6,9 @@ class Event::AttendeesController < ApplicationController
 
   def create
     if Attendee.create(user: current_user, event: current_event)
-      session[:user_id] = nil
       flash[:notice] = 'Tu check-in ha quedado registrado.'
-      respond_to do |format|
-        format.js
-      end
+      Pusher.trigger('printer-channel', 'printer', user: current_user, event: current_event.id)
+      redirect_to event_select_path(current_event)
     else
       render event_main_path
     end

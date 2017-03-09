@@ -9,6 +9,22 @@ class ApplicationController < ActionController::Base
     redirect_to event_main_url unless current_user
   end
 
+  def redirect_decisions
+    # Existe el evento y ya hiciste checkin
+    if @event && Attendee.find_by(user: current_user, event: @event)
+      redirect_to event_select_path(@event)
+    # Existe el evento y ya aceptace la invitation
+    elsif @event && Invitation.find_by(user: current_user, event: @event, status: :accepted)
+      redirect_to event_checkin_path(@event)
+    # Existe el evento y la invitation esta pendiente
+    elsif @event && Invitation.find_by(user: current_user, event: @event, status: :pending)
+      redirect_to invitations_path
+    else
+      redirect_to edit_user_path
+    end
+  end
+  helper_method :redirect_decisions
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
