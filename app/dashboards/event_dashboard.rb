@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class EventDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -19,6 +19,7 @@ class EventDashboard < Administrate::BaseDashboard
     finishes_at: Field::DateTime,
     label_xml: FileField,
     image: Field::Refile,
+    agenda_image: Field::Refile,
     choose_team: Field::Boolean,
     checkin: Field::Boolean,
     created_at: Field::DateTime,
@@ -50,7 +51,8 @@ class EventDashboard < Administrate::BaseDashboard
     :name,
     :starts_at,
     :finishes_at,
-    :image
+    :image,
+    :agenda_image
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -63,7 +65,8 @@ class EventDashboard < Administrate::BaseDashboard
     :starts_at,
     :finishes_at,
     :label_xml,
-    :image
+    :image,
+    :agenda_image
   ].freeze
 
   # Overwrite this method to customize how events are displayed

@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   has_many :users, through: :attendees
   has_many :invited_users, through: :invitations, class_name: 'User', source: :user
   attachment :image
+  attachment :agenda_image
 
   def to_param
     slug
