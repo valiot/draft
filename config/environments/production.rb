@@ -64,7 +64,7 @@ Rails.application.configure do
     domain: 'disruptiveangels.com',
     address: 'smtp.sendgrid.net',
     port: 465,
-    # authentication: :plain,
+    authentication: :plain,
     enable_starttls_auto: true
   }
 
