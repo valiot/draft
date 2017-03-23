@@ -3,6 +3,7 @@ class InvitationsController < ApplicationController
 
   def accept
     if @invitation.update(status: :accepted)
+      ConfirmationMailer.invitation_accepted(@invitation).deliver
       flash[:notice] = "Ya quedaste registrado al evento #{@invitation.event.name}."
       redirect_decisions
     else

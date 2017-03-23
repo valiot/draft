@@ -1,0 +1,15 @@
+<p>¡Hola <%= @user.name.split.first.titleize %>!</p>
+
+<p>Te confirmo que ya quedaste registrado para participar en <%= @event.name.titleize %>.</p>
+<p>Aquí te dejamos la agenda del evento. Solo tienes que traer tu presencia y lo que necesites para trabajar: laptop, herramientas de trabajo y toda la actitud.</p>
+<div>
+  <%= image_tag attachment_url(@event, :agenda_image) %>
+</div>
+<p>
+  Te dejamos la dirección del evento (El Cowork): <a href="http://bit.ly/disruptive-location">http://bit.ly/disruptive-location</a> <br />
+  Av. Frida Kahlo 195 Suite 1205, Monumento Italia Nuevo León, Valle Oriente, Del Valle, 66269 San Pedro Garza García, N.L.
+</p>
+<p>
+  Saludos,<br />
+  Draft Bot
+</p>
