@@ -3,7 +3,7 @@
 <p>Te confirmo que ya quedaste registrado para participar en <%= @event.name.titleize %>.</p>
 <p>Aquí te dejamos la agenda del evento. Solo tienes que traer tu presencia y lo que necesites para trabajar: laptop, herramientas de trabajo y toda la actitud.</p>
 <div>
-  <%= image_tag attachment_url(@event, :agenda_image) %>
+  <%= image_tag attachment_url(@event, :agenda_image), style: 'width: 80%;' %>
 </div>
 <p>
   Te dejamos la dirección del evento (El Cowork): <a href="http://bit.ly/disruptive-location">http://bit.ly/disruptive-location</a> <br />
