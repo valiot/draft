@@ -126,6 +126,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    connection_pool (2.2.1)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     debug_inspector (0.0.2)
@@ -284,6 +285,11 @@ GEM
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
     selectize-rails (0.12.4)
+    sidekiq (4.2.10)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (~> 3.2, >= 3.2.1)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -350,6 +356,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   scss_lint
+  sidekiq
   sinatra!
   spring
   spring-watcher-listen (~> 2.0.0)

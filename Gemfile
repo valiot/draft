@@ -19,6 +19,10 @@ gem 'refile-mini_magick'
 gem 'refile-s3'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
+group :production do
+  gem 'sidekiq'
+end
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.2'
 end
