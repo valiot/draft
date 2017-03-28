@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
   belongs_to :event
-  has_many :attendees
+  has_many :attendees, -> { joins(:event) }
   has_many :users, through: :attendees
 
   def available_profile?(profile)
