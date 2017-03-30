@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    @event = Event.find_by(slug: (env['omniauth.params'] || session['omniauth.params'])['event'] || params[:event]) if (env['omniauth.params'] || session['omniauth.params'] || params[:event])
+    slug = env.dig('omniauth.params', 'event') || params[:event]
+    @event = Event.find_by(slug: slug)
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
     redirect_decisions
