@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328160234) do
+ActiveRecord::Schema.define(version: 20170329221621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,26 @@ ActiveRecord::Schema.define(version: 20170328160234) do
     t.string   "image_filename"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "question"
+    t.integer  "q_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "stars"
+    t.text     "answer"
+    t.integer  "question_id"
+    t.integer  "reviewee_id"
+    t.integer  "reviewer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_reviews_on_question_id", using: :btree
+    t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id", using: :btree
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id", using: :btree
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.integer  "event_id"
@@ -102,6 +122,9 @@ ActiveRecord::Schema.define(version: 20170328160234) do
   add_foreign_key "attendees", "users"
   add_foreign_key "invitations", "events"
   add_foreign_key "invitations", "users"
+  add_foreign_key "reviews", "questions"
+  add_foreign_key "reviews", "users", column: "reviewee_id"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "teams", "events"
   add_foreign_key "users", "profiles"
 end
