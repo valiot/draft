@@ -1,0 +1,16 @@
+<h1>Review</h1>
+
+<%= simple_form_for @review do |f| %>
+  <% @event_questions.each do |event_question| %>
+    <div class="question"><%= event_question.question %></div>
+    <div class="question-input"><%= event_question.input("event_question_answers[#{event_question.id}]") %></div>
+  <% end %>
+
+  <% @team_mates.each do |team_mate| %>
+    <%= team_mate.name %>
+    <% @eteam_questions.each do |team_question| %>
+      <div class="question"><%= team_question.question %></div>
+      <div class="question-input"><%= team_question.input("team_review_answers[#{team_mate.id}][#{team_question.id}]") %></div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -10,7 +10,8 @@ class QuestionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     question: Field::String,
-    q_type: Field::String.with_options(searchable: false),
+    q_type: Field::Enum,
+    individual: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -33,6 +34,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :id,
     :question,
     :q_type,
+    :individual,
     :created_at,
     :updated_at,
   ].freeze
@@ -43,6 +45,7 @@ class QuestionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :question,
     :q_type,
+    :individual
   ].freeze
 
   # Overwrite this method to customize how questions are displayed

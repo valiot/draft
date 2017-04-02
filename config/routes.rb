@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :profiles
     resources :teams
     resources :users
+    resources :questions
 
     root to: 'attendees#index'
   end
@@ -45,6 +46,9 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'sessions#create'
     post 'auth/:provider/callback', to: 'sessions#create'
     get 'auth/failure', to: redirect('/:event')
+
+    get 'review', to: 'reviews#new'
+    post 'review', to: 'reviews#create'
 
     get 'login', to: 'identities#login', as: 'login'
     get 'signup', to: 'identities#new', as: 'signup'

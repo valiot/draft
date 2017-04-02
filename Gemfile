@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.1'
 
+gem 'simple_form'
 # gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
 gem 'administrate'
 gem 'administrate-field-enum'

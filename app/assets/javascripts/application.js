@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 //= require_tree ./channels
+//= require src/rating
 
 $('.uploadable-image').click(function(){
   $('#user_avatar').click();
