@@ -2,6 +2,7 @@ class Event::ReviewsController < ApplicationController
   before_filter :require_login
 
   def new
+    redirect_to edit_user_path unless current_event.review?
     @event_questions = Question.where(individual: false)
     @team_questions = Question.where(individual: true)
 

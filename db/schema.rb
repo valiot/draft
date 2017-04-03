@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402070518) do
+ActiveRecord::Schema.define(version: 20170403045830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170402070518) do
     t.boolean  "checkin",               default: false
     t.string   "agenda_image_id"
     t.string   "agenda_image_filename"
+    t.boolean  "review"
     t.index ["slug"], name: "index_events_on_slug", unique: true, using: :btree
   end
 

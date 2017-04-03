@@ -10,8 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_decisions
+    # Existe el evento y ya tienes equipo
+    if @event && Team.find_by(user: current_user, event: @event)
+      redirect_to event_review_path
     # Existe el evento y ya hiciste checkin
-    if @event && Attendee.find_by(user: current_user, event: @event)
+    elsif @event && Attendee.find_by(user: current_user, event: @event)
       redirect_to event_select_path(@event)
     # Existe el evento y ya aceptace la invitation
     elsif @event && Invitation.find_by(user: current_user, event: @event, status: :accepted)
