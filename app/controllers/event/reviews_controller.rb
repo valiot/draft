@@ -1,4 +1,6 @@
 class Event::ReviewsController < ApplicationController
+  before_filter :require_login
+
   def new
     @event_questions = Question.where(individual: false)
     @team_questions = Question.where(individual: true)
