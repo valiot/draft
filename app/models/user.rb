@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :accepted_invitations, -> { where(status: :accepted) }, class_name: 'Invitation'
   has_many :attendees
 
+  has_many :reviewees, class_name: 'User', foreign_key: 'reviewee_id'
+  has_many :reviewers, class_name: 'User', foreign_key: 'reviewer_id'
+
   enum shirt_size: [:s, :m, :l, :xl]
   enum role: [:user, :admin]
 

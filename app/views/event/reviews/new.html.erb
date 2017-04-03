@@ -1,0 +1,74 @@
+<% content_for :title, "Review #{current_event.name}" %>
+<div class="row justify-content-md-center">
+  <div class="col col-md-8">
+    <h1>Review <%= current_event.name %></h1>
+
+    <p>
+      Para nosotros es súper importante que todos los asistentes tengan la mejor
+      experiencia en nuestros eventos.
+    </p>
+    <p>
+      Por eso te pedimos que contestes la siguiente evaluación para ayudarnos a
+      mantener el mejor ambiente de colaboracióna y desempeño entre los equipos y
+      el mejor ambiente en los eventos.
+    </p>
+    <p>
+      Interpreta del 1 al 5 que tanto cada integrante del tu equipo se desempeñó en
+      las siguientes áreas.
+    </p>
+
+    <%= simple_form_for(@review, url: event_review_path, method: :post) do |f| %>
+      <div class="team-review">
+        <% @team_mates.each do |team_mate| %>
+          <div class="individual-review">
+            <strong><%= team_mate.name %></strong>
+            <% @team_questions.each do |team_question| %>
+              <label><%= team_question.question %></label>
+              <div class="question-input">
+                <%= render inline: team_question.input("team_review_answers[#{team_mate.id}][#{team_question.id}]") %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <p>
+        También es importante para nosotros saber que áreas podemos mejorar para que
+        te la pases increíble en el proximo evento.
+      </p>
+      <div class="event-questions">
+        <% @event_questions.each do |event_question| %>
+          <div class="question"><%= event_question.question %></div>
+          <div class="question-input">
+              <%= render inline: event_question.input("event_question_answers[#{event_question.id}]") %>
+          </div>
+        <% end %>
+      </div>
+      <p>Muchas Gracias! Nos vemos en el próximo Innovation Process!</p>
+      <%= f.submit 'Submit', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<script>
+  $(document).ready(function()
+  {
+    var x = document.getElementsByClassName("c-rating");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      var el = x[i];
+      //alert(el.childNodes[0].name);
+      // current rating, or initial rating
+      var currentRating = 0;
+
+      // max rating, i.e. number of stars you want
+      var maxRating= 5;
+
+      // callback to run after setting the rating
+      var callback = function(rating, star) {
+        star.parentNode.childNodes[0].value = rating;
+      };
+
+      // rating instance
+      var myRating = rating(el, currentRating, maxRating, callback);
+    }
+  });
+</script>

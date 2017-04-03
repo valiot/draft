@@ -22,6 +22,7 @@ class EventDashboard < Administrate::BaseDashboard
     agenda_image: Field::Refile,
     choose_team: Field::Boolean,
     checkin: Field::Boolean,
+    review: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -43,6 +44,7 @@ class EventDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :choose_team,
     :checkin,
+    :review,
     :attendees,
     :users,
     :invited_users,
@@ -62,6 +64,7 @@ class EventDashboard < Administrate::BaseDashboard
     :name,
     :choose_team,
     :checkin,
+    :review,
     :starts_at,
     :finishes_at,
     :label_xml,
