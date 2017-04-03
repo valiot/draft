@@ -30,7 +30,6 @@ class Event::ReviewsController < ApplicationController
                     reviewee_id: nil, reviewer_id: current_user.id,
                     event_id: current_event.id)
     end
-
     # Team Review Answers
     params.fetch('team_review_answers').keys.each do |team_review_answer_key|
       params.dig('team_review_answers', team_review_answer_key).keys.each do |question|
@@ -49,5 +48,6 @@ class Event::ReviewsController < ApplicationController
                       event_id: current_event.id)
       end
     end
+    redirect_to edit_user_path, notice: 'Gracias por ayudarnos a mejorar. 🤖'
   end
 end
