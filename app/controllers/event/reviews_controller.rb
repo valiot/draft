@@ -9,7 +9,7 @@ class Event::ReviewsController < ApplicationController
 
     @team_mates = @current_attendee.team.users - [current_user]
 
-    @review = Review.new()
+    @review = Review.new
   end
 
   def create
@@ -22,11 +22,11 @@ class Event::ReviewsController < ApplicationController
       else
         answer = params.dig('event_question_answers', event_question_answer_key)
       end
-      review = Review.create(stars: stars,
-                             answer: answer,
-                             question_id: event_question_answer_key.to_i,
-                             reviewee_id: nil, reviewer_id: current_user.id,
-                             event_id: current_event.id)
+      Review.create(stars: stars,
+                    answer: answer,
+                    question_id: event_question_answer_key.to_i,
+                    reviewee_id: nil, reviewer_id: current_user.id,
+                    event_id: current_event.id)
     end
 
     # Team Review Answers
@@ -39,12 +39,12 @@ class Event::ReviewsController < ApplicationController
         else
           answer = params.dig('team_review_answers', team_review_answer_key, question)
         end
-        review = Review.create(stars: stars,
-                               answer: answer,
-                               question_id: question.to_i,
-                               reviewee_id: team_review_answer_key.to_i,
-                               reviewer_id: current_user.id,
-                               event_id: current_event.id)
+        Review.create(stars: stars,
+                      answer: answer,
+                      question_id: question.to_i,
+                      reviewee_id: team_review_answer_key.to_i,
+                      reviewer_id: current_user.id,
+                      event_id: current_event.id)
       end
     end
   end
