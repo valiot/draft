@@ -3,6 +3,7 @@ class Event::ReviewsController < ApplicationController
 
   def new
     redirect_to edit_user_path unless current_event.review?
+    redirect_to edit_user_path if Review.find_by(event: current_event, reviewer: current_user)
     @event_questions = Question.where(individual: false)
     @team_questions = Question.where(individual: true)
 
