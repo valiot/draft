@@ -25,8 +25,8 @@ class Event < ApplicationRecord
   private
 
   def send_review_mail
-    users.each do |u|
-      ReviewMailer.review_invite(u, self).deliver_later
+    attendees.each do |attendee|
+      ReviewMailer.review_invite(attendee).deliver_later
     end
   end
 
