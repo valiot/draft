@@ -8,6 +8,8 @@ class Event < ApplicationRecord
   attachment :image
   attachment :agenda_image
 
+  after_update :send_review_mail, if: :review?
+
   def to_param
     slug
   end
@@ -21,6 +23,12 @@ class Event < ApplicationRecord
   end
 
   private
+
+  def send_review_mail
+    users.each do |u|
+      ReviewMailer.review_invite(u, self).deliver_later
+    end
+  end
 
   def generate_slug
     self.slug = name.parameterize
