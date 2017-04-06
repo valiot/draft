@@ -9,7 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    overall_rank: Field::Number,
+    overall_rank: Field::Number.with_options(decimals: 2),
     profile: Field::BelongsTo,
     invitations: Field::HasMany,
     attendees: Field::HasMany,

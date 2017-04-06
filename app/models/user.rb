@@ -14,13 +14,13 @@ class User < ApplicationRecord
   attachment :avatar, type: :image
 
   def overall_rank
-    format('%.2f', reviewees.average(:stars))
+    reviewees.average(:stars)
   end
 
   def question_ranks
     ranks = []
     questions.each do |q|
-      ranks << { stars: format('%.2f', Review.where(reviewee: self, question: q).average(:stars)), question: q.question }
+      ranks << { stars: Review.where(reviewee: self, question: q).average(:stars), question: q.question }
     end
     ranks
   end
