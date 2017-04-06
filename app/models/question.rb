@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  has_many :reviews
   enum q_type: [:stars, :open]
 
   def input(name)
