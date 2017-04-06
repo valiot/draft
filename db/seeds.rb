@@ -1,31 +1,55 @@
 # Setup questions for review.
 
 Question.create(
-  question: 'Abierto a nuevas ideas (por mas locas que fueran), honesto y transparente al compartir información y dar su opinion.',
+  question: 'Abierto a nuevas ideas (por más locas que fueran).',
   q_type: :stars,
   individual: true
 )
 
 Question.create(
-  question: 'Dio el "extra mile", estuvo siempre comprometido con el equipo y demostró ser pro-activo en el desarrollo del proyecto.',
+  question: 'Abierto a compartir información y a dar su opinión.',
   q_type: :stars,
   individual: true
 )
 
 Question.create(
-  question: 'Se relacionó con todos los integrantes del equipo y trabajó en conjunto para lograr los objetivos del equipo, siempre con buena actitud.',
+  question: 'Dio su máximo esfuerzo demostrando ser proactivo en el desarrollo del proyecto',
   q_type: :stars,
   individual: true
 )
 
 Question.create(
-  question: 'Se salió de su zona de confort y dio su máximo esfuerzo, aún si el proyecto fuera casi imposible de lograr.',
+  question: 'Estuvo siempre comprometido con el equipo.',
   q_type: :stars,
   individual: true
 )
 
 Question.create(
-  question: 'Aún con la presión encima demostró pasión y entusiasmo durante todo el evento',
+  question: 'Se relacionó con todos los integrantes del equipo.',
+  q_type: :stars,
+  individual: true
+)
+
+Question.create(
+  question: 'Trabajó en conjunto para lograr los objetivos del equipo.',
+  q_type: :stars,
+  individual: true
+)
+
+Question.create(
+  question: 'Trabajó siempre con buena actitud.',
+  q_type: :stars,
+  individual: true
+)
+
+Question.create(
+  question: 'Asumió riesgos aún sabiendo la incertidumbre del proyecto.',
+  q_type: :stars,
+  individual: true
+)
+
+Question.create(
+  question: 'Aún con la presión encima, demostró pasión y entusiasmo durante todo el evento.',
   q_type: :stars,
   individual: true
 )
