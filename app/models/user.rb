@@ -4,13 +4,22 @@ class User < ApplicationRecord
   has_many :accepted_invitations, -> { where(status: :accepted) }, class_name: 'Invitation'
   has_many :attendees
 
-  has_many :reviewees, class_name: 'User', foreign_key: 'reviewee_id'
-  has_many :reviewers, class_name: 'User', foreign_key: 'reviewer_id'
+  has_many :reviewees, class_name: 'Review', foreign_key: 'reviewee_id'
+  has_many :reviewers, class_name: 'Review', foreign_key: 'reviewer_id'
+  has_many :questions, through: :reviewees
 
   enum shirt_size: [:s, :m, :l, :xl]
   enum role: [:user, :admin]
 
   attachment :avatar, type: :image
+
+  def question_ranks
+    ranks = []
+    questions.each do |q|
+      ranks << {stars: Review.where(reviewee: self, question: q).average(:stars).to_i, question: q.question }
+    end
+    ranks
+  end
 
   def picture_url
     return avatar_url unless avatar_id.blank?

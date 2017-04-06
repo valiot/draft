@@ -18,6 +18,7 @@ class UserDashboard < Administrate::BaseDashboard
     role: Field::Enum,
     shirt_size: Field::Enum,
     cellphone: Field::Telephone,
+    question_ranks: Field::JSON,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -38,6 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :profile,
+    :question_ranks,
     :invitations,
     :attendees,
     :name,
