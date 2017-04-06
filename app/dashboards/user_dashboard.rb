@@ -9,6 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    overall_rank: Field::Number,
     profile: Field::BelongsTo,
     invitations: Field::HasMany,
     attendees: Field::HasMany,
@@ -31,6 +32,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :profile,
+    :overall_rank,
     :shirt_size,
     :id
   ].freeze
@@ -39,6 +41,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :profile,
+    :overall_rank,
     :question_ranks,
     :invitations,
     :attendees,
