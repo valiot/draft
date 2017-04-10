@@ -52,7 +52,7 @@ class ReviewDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how reviews are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(review)
-    "Review #{review.stars || review.answer}"
-  end
+  # def display_resource(review)
+  #   "Review #{review.stars || review.answer}"
+  # end
 end
