@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class QuestionDashboard < Administrate::BaseDashboard
+class ReviewDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,9 +9,13 @@ class QuestionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    question: Field::String,
-    q_type: Field::Enum,
-    individual: Field::Boolean,
+    question: Field::BelongsTo,
+    stars: Field::Number,
+    answer: Field::Text,
+    answer_stars: Field::String,
+    reviewer: Field::BelongsTo.with_options(class_name: 'User'),
+    reviewee: Field::BelongsTo.with_options(class_name: 'User'),
+    event: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,34 +28,31 @@ class QuestionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :question,
-    :q_type,
-    :created_at,
+    :reviewee,
+    :reviewer,
+    :answer_stars
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
+    :event,
     :question,
-    :q_type,
-    :individual,
-    :created_at,
-    :updated_at,
+    :stars,
+    :answer,
+    :reviewee,
+    :reviewer
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :question,
-    :q_type,
-    :individual
-  ].freeze
+  FORM_ATTRIBUTES = [].freeze
 
-  # Overwrite this method to customize how questions are displayed
+  # Overwrite this method to customize how reviews are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(question)
-    question.question
+  def display_resource(review)
+    "Review #{review.stars || review.answer}"
   end
 end

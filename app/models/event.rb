@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :teams
   has_many :users, through: :attendees
   has_many :invited_users, through: :invitations, class_name: 'User', source: :user
-  has_many :reviews, -> { where(stars: nil) }
+  has_many :reviews, -> { where.not(answer: nil) }
   attachment :image
   attachment :agenda_image
 

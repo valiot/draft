@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :teams
     resources :users
     resources :questions
+    resources :reviews
 
     root to: 'attendees#index'
   end

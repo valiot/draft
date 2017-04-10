@@ -23,6 +23,7 @@ class EventDashboard < Administrate::BaseDashboard
     choose_team: Field::Boolean,
     checkin: Field::Boolean,
     review: Field::Boolean,
+    reviews: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -35,8 +36,7 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :attendees,
-    :teams,
-    :id
+    :teams
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -54,7 +54,8 @@ class EventDashboard < Administrate::BaseDashboard
     :starts_at,
     :finishes_at,
     :image,
-    :agenda_image
+    :agenda_image,
+    :reviews
   ].freeze
 
   # FORM_ATTRIBUTES
