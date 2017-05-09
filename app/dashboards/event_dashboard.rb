@@ -9,6 +9,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invitations: Field::HasMany,
+    location: Field::BelongsTo,
     users: Field::HasMany,
     invited_users: Field::HasMany,
     attendees: Field::HasMany,
@@ -42,6 +43,7 @@ class EventDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :location,
     :choose_team,
     :checkin,
     :review,
@@ -63,6 +65,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :location,
     :choose_team,
     :checkin,
     :review,
