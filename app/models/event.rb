@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   before_create :generate_slug
+  belongs_to :location
   has_many :invitations
   has_many :attendees
   has_many :teams
