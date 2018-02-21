@@ -11,8 +11,6 @@ App.draft = App.cable.subscriptions.create('DraftChannel', {
       case "update_turn":
         if ($('#choose_problem').length) {
           return true;
-        }else {
-          return Turbolinks.visit(window.location.toString());
         }
     }
   }
