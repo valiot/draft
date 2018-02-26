@@ -9,7 +9,7 @@ class Event::TeamsController < ApplicationController
   def select
     @attendees = current_event.attendees.where(team: nil)
     @next_user = next_user
-    @teams = Team.where(event: current_event).select { |t| t.available_profile?(current_user.profile.name) }
+    @teams = Team.where(event: current_event).select { |t| t.available_profile?(current_user.profile&.name) }
     @turns = turns
   end
 
