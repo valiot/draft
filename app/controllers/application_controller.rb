@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     # Existe el evento y ya aceptace la invitation
     return redirect_to event_checkin_path(@event) if @event && @invitation&.accepted?
     # Acceptaste invitacion y se envia a chekin
-    return redirect_to event_checkin_path(@invitation.event) if @event.checkin?
+    return redirect_to event_checkin_path(@event) if @event.checkin?
     # Existe el evento y la invitation esta pendiente
     return redirect_to invitations_path if @event && @invitation&.pending?
     redirect_to edit_user_path
