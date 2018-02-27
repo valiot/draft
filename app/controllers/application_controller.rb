@@ -12,12 +12,15 @@ class ApplicationController < ActionController::Base
   def redirect_decisions
     @attendee = @event&.attendees&.find_by(user: current_user)
     @invitation = @event&.invitations&.find_by(user: current_user, event: @event)
+
     # Existe el evento y ya tienes equipo
     return redirect_to event_review_path(@event) if @event && @attendee&.team
     # Existe el evento y ya hiciste checkin
     return redirect_to event_select_path(@event) if @event && @attendee
     # Existe el evento y ya aceptace la invitation
     return redirect_to event_checkin_path(@event) if @event && @invitation&.accepted?
+    # Acceptaste invitacion y se envia a chekin
+    return redirect_to event_checkin_path(@invitation.event) if @event.checkin?
     # Existe el evento y la invitation esta pendiente
     return redirect_to invitations_path if @event && @invitation&.pending?
     redirect_to edit_user_path
