@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     # Existe el evento y ya tienes equipo
     return redirect_to event_review_path(@event) if @event && @attendee&.team && @event.review?
     # Existe el evento y ya hiciste checkin
-    return redirect_to event_select_path(@event) if @event && @attendee
+    return redirect_to event_select_path(@event) if @event && @attendee && @event.choose_team?
     # Existe el evento y ya aceptace la invitation
     return redirect_to event_checkin_path(@event) if @event && @invitation&.accepted? && @event.checkin?
     # Existe el evento y la invitation esta pendiente
