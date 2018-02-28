@@ -1,13 +1,10 @@
 <div class="card">
   <h1>Nombre:</h1>
-  <input type="text" name="" value="" id="nombree">
+  <input type="text" name="" value="" id="nombre">
   <button type="button" name="button" id="enviar_nombre">enviar</button>
 
 </div>
-
-
 <script type="text/javascript">
-
   // Pusher setup
   var pusher = new Pusher('539a5f2700194b31fcf1', {
     encrypted: true
@@ -27,15 +24,12 @@
     }
   }
   $("#enviar_nombre").click(function(){
-    if ($("#nombree").val().length >1) {
-      $.get("events/" + data.event, function( event_data ) {
-        var labelXml = event_data.label_xml;
-        var label = dymo.label.framework.openLabelXml(labelXml);
-        label.setObjectText("Name", $("#nombree").val());
+    if ($("#nombre").val().length >1) {
+        var label = dymo.label.framework.openLabelXml(`<%=@event.label_xml%>`);
+        label.setObjectText("Name", $("#nombee").val());
         label.print(printerName);
-      });
-    }
-  })
+        }
+  });
 
   // what to do when printer message received
   channel.bind('printer', function(data) {
