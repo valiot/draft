@@ -5,6 +5,7 @@ class InvitationsController < ApplicationController
     if @invitation.update(status: :accepted)
       ConfirmationMailer.invitation_accepted(@invitation).deliver_later
       flash[:notice] = "Ya quedaste registrado al evento #{@invitation.event.name}."
+      @event = @invitation.event
       redirect_decisions
     else
       render invitations_path
