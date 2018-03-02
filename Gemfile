@@ -5,7 +5,7 @@ gem 'simple_form'
 # gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
 gem 'bourbon'
 gem 'administrate'
-gem  "administrate-field-enum"
+gem  administrate-field-enum"
 gem 'administrate-field-image'
 gem 'administrate-field-json'
 gem 'administrate-field-refile'
