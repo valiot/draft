@@ -15,6 +15,8 @@ class Event < ApplicationRecord
   def to_param
     slug
   end
+  
+  def ups
 
   def self.find(input)
     if input.is_a?(Integer)

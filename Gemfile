@@ -3,14 +3,15 @@ ruby '2.4.1'
 
 gem 'simple_form'
 # gem 'administrate-field-json', github: 'eddietejeda/administrate-field-json', branch: 'master'
+gem 'bourbon'
 gem 'administrate'
-gem 'administrate-field-enum'
+gem  administrate-field-enum"
 gem 'administrate-field-image'
 gem 'administrate-field-json'
 gem 'administrate-field-refile'
 gem 'administrate-field-telephone'
 gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'bourbon'
+
 gem 'oj'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
