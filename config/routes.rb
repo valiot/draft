@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   scope path: ':event', module: 'event', as: 'event' do
     root to: 'sessions#new', as: 'main'
+    get 'print', to: 'printers#print'
     get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'checkin', to: 'attendees#new', as: 'checkin'
     post 'checkin', to: 'attendees#create', as: 'post_checkin'
