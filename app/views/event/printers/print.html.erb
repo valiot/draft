@@ -24,8 +24,10 @@
   }
   $("#enviar_nombre").click(function () {
     if ($("#nombre").val().length > 1) {
-      var label = dymo.label.framework.openLabelXml(`<%=current_event.label_xml%>`);
-      label.setObjectText("Name", $("#nombee").val());
+      var label_xml = `<%= raw  current_event.label_xml%>`;
+      var name = $("#nombre").val();
+      var label = dymo.label.framework.openLabelXml(label_xml);
+      label.setObjectText("Name", name);
       label.print(printerName);
     }
   });
