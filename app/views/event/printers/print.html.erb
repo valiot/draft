@@ -9,6 +9,8 @@
   // Pusher setup
   var pusher = new Pusher('539a5f2700194b31fcf1', {encrypted: true});
   var channel = pusher.subscribe('printer-channel');
+  var label_xml = `<%= raw current_event.label_xml %>`;
+  var label = dymo.label.framework.openLabelXml(labelXml);
 
   // Get printer
   var printers = dymo.label.framework.getPrinters();
@@ -22,24 +24,21 @@
       break;
     }
   }
+  // print from the view
   $("#enviar_nombre").click(function () {
-    if ($("#nombre").val().length > 1) {
-      var label_xml = `<%= raw  current_event.label_xml%>`;
-      var name = $("#nombre").val();
-      var label = dymo.label.framework.openLabelXml(label_xml);
-      label.setObjectText("Name", name);
-      label.print(printerName);
-    }
+      enviar_impresora($("#nombre").val());
   });
+
+  // print  
+  function enviar_impresora(nombre){
+    if( nombre.length > 1 ){
+    label.setObjectText("Name", nombre);
+    label.print(printerName);
+    }
+  }
 
   // what to do when printer message received
   channel.bind('printer', function (data) {
-    console.log(data);
-    $.get("events/" + data.event, function (event_data) {
-      var labelXml = event_data.label_xml;
-      var label = dymo.label.framework.openLabelXml(labelXml);
-      label.setObjectText("Name", data.user.name.split(' ')[0]);
-      label.print(printerName);
-    });
+    enviar_impresora(data.user.name.split(' ')[0]);
   });
 </script>
